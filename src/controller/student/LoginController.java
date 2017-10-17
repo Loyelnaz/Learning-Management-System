@@ -68,7 +68,7 @@ public class LoginController extends HttpServlet {
 				if(rs.next()) {
 					int userid = rs.getInt(1);
 					//session.setAttribute("user_id", userid);
-					rd = request.getRequestDispatcher("profile.jsp");
+					rd = request.getRequestDispatcher("/views/student/homepage");
 					rd.forward(request, response);
 				}
 				else {

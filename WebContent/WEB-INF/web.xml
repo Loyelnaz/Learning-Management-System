@@ -31,6 +31,16 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>CourseListController</display-name>
+    <servlet-name>CourseListController</servlet-name>
+    <servlet-class>controller.student.CourseListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CourseListController</servlet-name>
+    <url-pattern>/views/student/homepage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
     <display-name>LoginInstructor</display-name>
     <servlet-name>LoginInstructor</servlet-name>
     <servlet-class>controller.instructor.LoginInstructor</servlet-class>
