@@ -29,4 +29,24 @@
     <servlet-name>RegisterController</servlet-name>
     <url-pattern>/views/student/register</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginInstructor</display-name>
+    <servlet-name>LoginInstructor</servlet-name>
+    <servlet-class>controller.instructor.LoginInstructor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginInstructor</servlet-name>
+    <url-pattern>/views/instructor/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegisterInstructor</display-name>
+    <servlet-name>RegisterInstructor</servlet-name>
+    <servlet-class>controller.instructor.RegisterInstructor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterInstructor</servlet-name>
+    <url-pattern>/views/instructor/register</url-pattern>
+  </servlet-mapping>
 </web-app>

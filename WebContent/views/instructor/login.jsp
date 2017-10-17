@@ -4,11 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Instructor Login Page</title>
 </head>
 <body>
-<h3>Welcome to Learning Management System</h3>
-<a href="views/student/login.jsp">Student Login</a>
-<a href="views/instructor/login.jsp">Instructor Login</a>
+
+<form action="login" method="post">
+	<label>Username: </label><input type="text" name="username"><br>
+	<label>Password: </label><input type="password" name="password"><br>
+	<input type="submit" value="Login"><br>
+	<a href="register.jsp">Register</a>
+</form>
+
 </body>
 </html>
