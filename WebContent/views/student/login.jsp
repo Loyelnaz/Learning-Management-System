@@ -8,10 +8,11 @@
 </head>
 <body>
 
-<form action="" method="post">
+<form action="login" method="post">
 	<label>Username: </label><input type="text" name="username"><br>
 	<label>Password: </label><input type="password" name="password"><br>
-	<input type="submit" value="Login">
+	<input type="submit" value="Login"><br>
+	<a href="register.jsp">Register</a>
 </form>
 
 </body>

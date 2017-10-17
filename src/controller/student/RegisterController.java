@@ -9,15 +9,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
 
 /**
- * Servlet implementation class LoginController
+ * Servlet implementation class RegisterController
  */
-public class LoginController extends HttpServlet {
+public class RegisterController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginController() {
+    public RegisterController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,27 +35,50 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		doGet(request, response);
+		//doGet(request, response);
 		
 		Connection conn = null;
 		PreparedStatement ps = null;
-		conn = new DBConnector().getConnection();
+		
 		Crypto cr = new Crypto();
 		
+		String first_name = request.getParameter("first_name");
+		String middle_name = request.getParameter("middle_name");
+		String last_name = request.getParameter("last_name");
+		String emailid = request.getParameter("emailid");
+//		Integer phoneno = Integer.parseInt(request.getParameter("phoneno"));
+		String phoneno = request.getParameter("phoneno");
 		String username = request.getParameter("username");
-//		String password = request.getParameter("password");
+//		String password;
+//		try {
+//			password = cr.encrypt(request.getParameter("password"));
+//		} catch (Exception e1) {
+//			e1.printStackTrace();
+//		}
+		
+		conn = new DBConnector().getConnection();
 		
 		try {
 			String password = cr.encrypt(request.getParameter("password"));
-			ps = conn.prepareStatement("select * from user_table where username=? and password=?");
-			ps.setString(1, username);
-			ps.setString(2, password);
-			ps.executeQuery();
+			ps = conn.prepareStatement("insert into user_table "
+									   + "(first_name, middle_name, last_name, emailid, phoneno, username, password, ugid, is_active)"
+									   + "values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			ps.setString(1, first_name);
+			ps.setString(2, middle_name);
+			ps.setString(3, last_name);
+			ps.setString(4, emailid);
+			ps.setString(5, phoneno);
+			ps.setString(6, username);
+			ps.setString(7, password);
+			ps.setInt(8, 2);
+			ps.setBoolean(9, true);
+			
+			ps.executeUpdate();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			response.sendRedirect("register.jsp");
+			//response.sendRedirect("index.jsp");
 		}
 	}
 

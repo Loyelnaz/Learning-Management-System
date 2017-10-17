@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-hi
+<h3>Welcome to Learning Management System</h3>
+<a href="views/student/login.jsp">Student Login</a>
 </body>
 </html>
