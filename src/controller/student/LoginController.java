@@ -76,7 +76,6 @@ public class LoginController extends HttpServlet {
 					rd = request.getRequestDispatcher("login.jsp");
 					rd.include(request, response);
 				}
-//				response.sendRedirect("register.jsp");
 			}
 			else {
 				out.print("User does not exists! Register for an account.");
