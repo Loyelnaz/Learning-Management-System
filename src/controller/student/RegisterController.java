@@ -34,32 +34,21 @@ public class RegisterController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
 		Connection conn = null;
 		PreparedStatement ps = null;
-		
-		Crypto cr = new Crypto();
+		conn = new DBConnector().getConnection();
 		
 		String first_name = request.getParameter("first_name");
 		String middle_name = request.getParameter("middle_name");
 		String last_name = request.getParameter("last_name");
 		String emailid = request.getParameter("emailid");
-//		Integer phoneno = Integer.parseInt(request.getParameter("phoneno"));
 		String phoneno = request.getParameter("phoneno");
 		String username = request.getParameter("username");
-//		String password;
-//		try {
-//			password = cr.encrypt(request.getParameter("password"));
-//		} catch (Exception e1) {
-//			e1.printStackTrace();
-//		}
-		
-		conn = new DBConnector().getConnection();
 		
 		try {
-			String password = cr.encrypt(request.getParameter("password"));
+			String password = Crypto.encrypt(request.getParameter("password"));
 			ps = conn.prepareStatement("insert into user_table "
 									   + "(first_name, middle_name, last_name, emailid, phoneno, username, password, ugid, is_active)"
 									   + "values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -75,7 +64,6 @@ public class RegisterController extends HttpServlet {
 			
 			ps.executeUpdate();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			//response.sendRedirect("index.jsp");
