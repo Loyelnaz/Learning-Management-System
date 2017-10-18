@@ -72,13 +72,13 @@ public class LoginController extends HttpServlet {
 					rd.forward(request, response);
 				}
 				else {
-					out.print("The password entered is incorrect. Please try again.");
+					request.setAttribute("error", "The password entered is incorrect. Please try again.");
 					rd = request.getRequestDispatcher("login.jsp");
 					rd.include(request, response);
 				}
 			}
 			else {
-				out.print("User does not exists! Register for an account.");
+				request.setAttribute("error", "User does not exists! Register for an account.");
 				rd = request.getRequestDispatcher("login.jsp");
 				rd.include(request, response);
 			}
