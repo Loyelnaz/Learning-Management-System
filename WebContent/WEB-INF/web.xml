@@ -69,4 +69,14 @@
     <servlet-name>RegisterInstructor</servlet-name>
     <url-pattern>/views/instructor/register</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginAdmin</display-name>
+    <servlet-name>LoginAdmin</servlet-name>
+    <servlet-class>controller.admin.LoginAdmin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginAdmin</servlet-name>
+    <url-pattern>/views/admin/login</url-pattern>
+  </servlet-mapping>
 </web-app>
