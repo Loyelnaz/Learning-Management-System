@@ -19,10 +19,13 @@ public class CourseListController extends HttpServlet {
 	
 	String name;
 	String description;
+	ArrayList<CourseListController> courses = new ArrayList<>();
 	
 	public CourseListController(String name, String description) {
 		this.name = name;
 		this.description = description;
+		courses.add(this);
+		System.out.println(courses.get(0));
 	}
 	
 	private static final long serialVersionUID = 1L;
@@ -47,18 +50,22 @@ public class CourseListController extends HttpServlet {
 		ResultSet rs = null;
 		PrintWriter out = response.getWriter();
 		conn = new DBConnector().getConnection();
-		CourseListController clc;
-		List<CourseListController> courses = new ArrayList<>();
+//		CourseListController clc = new CourseListController();
+		ArrayList<CourseListController> courses = new ArrayList<>();
 		
 		try {
 			ps = conn.prepareStatement("select * from course_table");
 			rs = ps.executeQuery();
 			
-			while(rs.next()) {
+//			while(rs.next()) {
+//				CourseListController clc = new CourseListController(rs.getString(2), rs.getString(3));
 //				out.print("<h5>"+rs.getString(2)+"</h5>");
-				clc = new CourseListController(rs.getString(2), rs.getString(3));
-				courses.add(clc);
-			}
+//				clc = new CourseListController(rs.getString(2), rs.getString(3));
+//				clc.addCourses(rs.getString(2), rs.getString(3));
+				//System.out.println(courses.indexOf(clc));
+			//}
+			//String person = "Sankalp";
+			request.setAttribute("rs", rs);
 			request.getRequestDispatcher("homepage.jsp").forward(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
