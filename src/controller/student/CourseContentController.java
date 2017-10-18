@@ -1,28 +1,23 @@
 package controller.student;
 
-import database.*;
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import database.*;
 
 /**
- * Servlet implementation class CourseListController
+ * Servlet implementation class CourseContentController
  */
-public class CourseListController extends HttpServlet {
-	
+public class CourseContentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CourseListController() {
+    public CourseContentController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,15 +31,29 @@ public class CourseListController extends HttpServlet {
 		
 		Connection conn = null;
 		PreparedStatement ps = null;
-		ResultSet rs = null;
-		PrintWriter out = response.getWriter();
+		ResultSet course = null, course_modules = null;
+		
 		conn = new DBConnector().getConnection();
 		
 		try {
-			ps = conn.prepareStatement("select * from course_table");
-			rs = ps.executeQuery();
-			request.setAttribute("courses", rs);
-			request.getRequestDispatcher("homepage.jsp").forward(request, response);
+			int course_id = Integer.parseInt(request.getParameter("course_id"));
+			ps = conn.prepareStatement("select * from course_table where course_id=?");
+			ps.setInt(1, course_id);
+			course = ps.executeQuery();
+			
+			if(course.next()) {
+				System.out.println("Name: " + course.getString(2));
+				request.setAttribute("course", course);
+			}
+			
+//			ps = conn.prepareStatement("select * from course_content where course_id=? order by module_no");
+//			ps.setInt(1, course_id);
+//			course_modules = ps.executeQuery();
+//			
+//			if(course_modules.next()) {
+//				request.setAttribute("course_modules", course_modules);
+//			}
+			request.getRequestDispatcher("coursepage.jsp").forward(request, response);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
