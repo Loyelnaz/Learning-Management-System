@@ -42,7 +42,7 @@ public class LoginAdmin extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		DBLogin dblogin = new DBLogin();
-		int result = dblogin.isLogged(username, password, "admin_login");
+		int result = dblogin.isLogged(username, password, "admin_login", "admin");
 		
 		if(result > 0) {
 			session.setAttribute("admin_id", result);

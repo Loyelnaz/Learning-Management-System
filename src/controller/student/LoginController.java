@@ -42,7 +42,7 @@ public class LoginController extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		DBLogin dblogin = new DBLogin();
-		int result = dblogin.isLogged(username, password, "user_table");
+		int result = dblogin.isLogged(username, password, "user_table", "student");
 		
 		if(result > 0) {
 			session.setAttribute("user_id", result);
