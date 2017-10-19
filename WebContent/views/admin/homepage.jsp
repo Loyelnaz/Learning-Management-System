@@ -8,6 +8,6 @@
 </head>
 <body>
 
-<a href="instructor_approval.jsp">Approve Instructor</a>
+<a href="instructor_approval">Approve Instructor</a>
 </body>
 </html>

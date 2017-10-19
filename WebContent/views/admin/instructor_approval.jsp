@@ -10,5 +10,12 @@
 <body>
 	Hi Instructor Approval page!
 	
+	<%
+		ResultSet inactive_instructor = (ResultSet) request.getAttribute("inactive");
+	
+		while(inactive_instructor.next()) {
+			out.print(inactive_instructor.getString(2));
+		}
+	%>
 </body>
 </html>

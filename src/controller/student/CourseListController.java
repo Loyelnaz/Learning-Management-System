@@ -37,7 +37,7 @@ public class CourseListController extends HttpServlet {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		PrintWriter out = response.getWriter();
+		//PrintWriter out = response.getWriter();
 		conn = new DBConnector().getConnection();
 		
 		try {
