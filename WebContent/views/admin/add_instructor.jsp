@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<a href="instructor_approval">Approve Instructor</a>
-<a href="add_instructor">Add Instructor</a>
+Hi! Add instructor here!
 </body>
 </html>

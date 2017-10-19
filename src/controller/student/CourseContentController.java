@@ -44,6 +44,7 @@ public class CourseContentController extends HttpServlet {
 			if(course.next()) {
 				System.out.println("Name: " + course.getString(2));
 				request.setAttribute("course", course);
+				request.getRequestDispatcher("coursepage.jsp").forward(request, response);
 			}
 			
 //			ps = conn.prepareStatement("select * from course_content where course_id=? order by module_no");
@@ -53,7 +54,6 @@ public class CourseContentController extends HttpServlet {
 //			if(course_modules.next()) {
 //				request.setAttribute("course_modules", course_modules);
 //			}
-			request.getRequestDispatcher("coursepage.jsp").forward(request, response);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
