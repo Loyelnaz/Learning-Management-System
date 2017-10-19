@@ -16,7 +16,7 @@
 	while(course.next()) {
 		out.print("Name: " + course.getString(2) + "<br>");
 		out.print("Description: " + course.getString(3) + "<br>");
-		out.print("<a href='coursepage.jsp?course_id="+course.getInt(1)+"'>Go to course</a>");
+		out.print("<a href='coursepage?course_id="+course.getInt(1)+"'>Go to course</a>");
 	}
 %>
 

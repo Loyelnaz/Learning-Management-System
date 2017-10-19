@@ -12,6 +12,13 @@
 courses
 
 <%
+ResultSet course = (ResultSet)request.getAttribute("course");
+while(course.next()) {
+	out.print("<h4>" + course.getString(2) + "</h4><br>");
+}
+%>
+
+<%
 Connection conn = null;
 PreparedStatement ps = null;
 
