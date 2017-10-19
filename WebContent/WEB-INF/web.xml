@@ -79,4 +79,14 @@
     <servlet-name>LoginAdmin</servlet-name>
     <url-pattern>/views/admin/login</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InstructorApproval</display-name>
+    <servlet-name>InstructorApproval</servlet-name>
+    <servlet-class>controller.admin.InstructorApproval</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InstructorApproval</servlet-name>
+    <url-pattern>/views/admin/instructor_approval</url-pattern>
+  </servlet-mapping>
 </web-app>
