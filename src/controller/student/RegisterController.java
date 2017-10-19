@@ -65,9 +65,8 @@ public class RegisterController extends HttpServlet {
 			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			//response.sendRedirect("index.jsp");
-		}
+		} 
+		response.sendRedirect("login.jsp");
 	}
 
 }

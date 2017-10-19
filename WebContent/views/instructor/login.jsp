@@ -9,6 +9,11 @@
 <body>
 
 <form action="login" method="post">
+	<%
+		String message = (String)request.getAttribute("error");
+		if(message != null) 
+			out.print("<font color='red'>" + message + "</font><br>");
+	%>
 	<label>Username: </label><input type="text" name="username"><br>
 	<label>Password: </label><input type="password" name="password"><br>
 	<input type="submit" value="Login"><br>
