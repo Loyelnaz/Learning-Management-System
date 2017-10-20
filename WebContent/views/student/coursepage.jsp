@@ -9,13 +9,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-courses
+Courses
 
 <%
-ResultSet course = (ResultSet)request.getAttribute("course");
-while(course.next()) {
-	out.print(course.getString(2));
-	out.print(course.getString(3));
+Connection conn = null;
+PreparedStatement ps = null;
+
+conn = new DBConnector().getConnection();
+int course_id = Integer.parseInt(request.getParameter("course_id"));
+ps = conn.prepareStatement("select * from course_content where course_id=?");
+ps.setInt(1, course_id);
+ResultSet rs = ps.executeQuery();
+
+int i = 1;
+out.print("<br>");
+while(rs.next()) {
+	out.print("Module " + i + ": " + rs.getString(2) + "<br>");
+	out.print("<i>" + rs.getString(3) + "</i><br>");
+	i = i + 1;
 }
 %>
 

@@ -9,7 +9,7 @@
 <body>
 Hi! Add instructor here!
 
-<form action="add_instructor" method="post">
+<form style="display:none" action="add_instructor" method="post">
 	<label>First Name: </label><input type="text" name="first_name"><br>
 	<label>Middle Name: </label><input type="text" name="middle_name"><br>
 	<label>Last Name: </label><input type="text" name="last_name"><br>

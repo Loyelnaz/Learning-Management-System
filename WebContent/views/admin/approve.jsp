@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Hello!</h1>
-<h3>Welcome to Learning Management System</h3>
-<a href="views/student/login.jsp">Student Login</a><br>
-<a href="views/instructor/login.jsp">Instructor Login</a><br>
-<a href="views/admin/login.jsp">Admin Login</a><br>
+
 </body>
 </html>
