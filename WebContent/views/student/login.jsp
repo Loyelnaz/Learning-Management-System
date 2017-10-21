@@ -9,18 +9,22 @@
 </head>
 <body>
 
-<form action="login" method="post">
+<form action="login" method="post" style="margin-top: 120px">
 	<%
 		String message = (String)request.getAttribute("error");
 		if(message != null) 
-			out.print("<font color='red'>" + message + "</font><br>");
+			out.print("<center><font color='red'>" + message + "</font></center><br>");
 	%>
-	<label>Username: </label><input type="text" name="username"><br>
-	<label>Password: </label><input type="password" name="password"><br>
-	<input type="submit" value="Login"><br>
-	<a href="register.jsp">Register</a>
+	<center>
+		<label>Username: </label><input type="text" name="username"><br>
+		<label>Password: </label><input type="password" name="password"><br>
+		<input type="submit" value="Login" class="btn btn-primary"><br>
+	</center>
 	
 </form>
 
+<center>
+Don't have an account?<a href="register.jsp"> Register</a>
+</center>
 </body>
 </html>

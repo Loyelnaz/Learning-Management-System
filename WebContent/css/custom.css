@@ -1,0 +1,17 @@
+@charset "ISO-8859-1";
+
+label{
+    display: inline-block;
+    float: none;
+    clear: left;
+    width: 150px;
+    text-align: right;
+}
+input[type="text"], input[type="password"] {
+  	display: inline-block;
+ 	float: none;
+}
+input[type="submit"] {
+  	display: inline-block;
+  	margin-left: 110px;
+}
