@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-Hi Instructor!
+Hi Instructor!<br>
+
+<form action="add_course.jsp" method="post">
+	<input type="submit" value="Add Course"><br>
+</form>
 </body>
 </html>

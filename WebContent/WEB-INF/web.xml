@@ -109,4 +109,14 @@
     <servlet-name>InstructorApprovalController</servlet-name>
     <url-pattern>/views/admin/approve</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddCourseController</display-name>
+    <servlet-name>AddCourseController</servlet-name>
+    <servlet-class>controller.instructor.AddCourseController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddCourseController</servlet-name>
+    <url-pattern>/views/instructor/add_course</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -48,7 +48,7 @@ public class LoginInstructor extends HttpServlet {
 		
 		if(result > 0) {
 			session.setAttribute("user_id", result);
-			rd = request.getRequestDispatcher("/views/instructor/homepage");
+			rd = request.getRequestDispatcher("/views/instructor/homepage.jsp");
 			rd.forward(request, response);
 		}
 		else if(result == 0) {
