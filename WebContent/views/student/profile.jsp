@@ -7,10 +7,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
 <title>Insert title here</title>
 </head>
 <body>
+
 <h4>Profile</h4>
+
+<form action="editprofile.jsp" method="post">
+	<input type="submit" value="Edit Profile">
+</form>
+
 <% 
 HttpSession httpsession = request.getSession(true);
 int user_id = (Integer) httpsession.getAttribute("user_id");

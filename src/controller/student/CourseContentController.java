@@ -48,11 +48,11 @@ public class CourseContentController extends HttpServlet {
 			
 			if(enrolled.next()) {
 				request.setAttribute("isEnrolled", true);
-				request.getRequestDispatcher("coursepage.jsp").forward(request, response);
+				request.getRequestDispatcher("coursepage.jsp?course_id="+course_id+"").forward(request, response);
 			}
 			else {
 				request.setAttribute("isEnrolled", false);
-				request.getRequestDispatcher("coursepage.jsp").forward(request, response);
+				request.getRequestDispatcher("coursepage.jsp?course_id="+course_id+"").forward(request, response);
 			}
 			
 //			ps = conn.prepareStatement("select * from course_table where course_id=?");
@@ -83,10 +83,13 @@ public class CourseContentController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 //		doGet(request, response);
-		int course_id = Integer.parseInt(request.getParameter("course_id"));
+//		int course_id = Integer.parseInt(request.getParameter("course_id"));
 		System.out.println("Enroll Now");
 //		request.getRequestDispatcher("/views/student/coursepage.jsp").forward(request, response);
-		response.sendRedirect("coursepage.jsp?course_id='"+course_id+"'");
+//		response.sendRedirect("coursepage.jsp?course_id='"+course_id+"'");
+//		request.getRequestDispatcher("coursepage.jsp").forward(request, response);
+//		request.getRequestDispatcher("coursepage.jsp?course_id="+course_id+"").forward(request, response);
+		doGet(request, response);
 	}
 
 }

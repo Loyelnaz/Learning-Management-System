@@ -35,7 +35,7 @@ Courses
 	else {
 		out.print("(Not Enrolled)");
 		out.print("<br>");
-		out.print("<a href='coursepage?course_id="+rs.getInt(1)+"'>Enroll Now</a><br>");
+		out.print("<form action='coursepage' method='post'><input type='submit' value='Enroll Now'></form>");
 		while(rs.next()) {
 			out.print("Module " + i + ": " + rs.getString(2) + "<br>");
 			i = i + 1;
@@ -43,6 +43,7 @@ Courses
 	}
 	
 %>
+<!-- out.print("<a href='coursepage?course_id="+rs.getInt(1)+"'>Enroll Now</a><br>"); -->
 	<!--out.print("<form action='coursepage?course_id="+rs.getInt(1)+"' method='post'><input type='submit' value='Enroll Now'></form>");-->
 
 
