@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
 <title>Student Login Page</title>
 </head>
 <body>
@@ -19,6 +19,7 @@
 	<label>Password: </label><input type="password" name="password"><br>
 	<input type="submit" value="Login"><br>
 	<a href="register.jsp">Register</a>
+	
 </form>
 
 </body>
