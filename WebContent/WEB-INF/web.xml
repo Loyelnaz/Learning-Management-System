@@ -119,4 +119,14 @@
     <servlet-name>AddCourseController</servlet-name>
     <url-pattern>/views/instructor/add_course</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddModuleController</display-name>
+    <servlet-name>AddModuleController</servlet-name>
+    <servlet-class>controller.instructor.AddModuleController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddModuleController</servlet-name>
+    <url-pattern>/views/instructor/add_module</url-pattern>
+  </servlet-mapping>
 </web-app>

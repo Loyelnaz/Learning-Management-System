@@ -57,8 +57,11 @@ public class AddCourseController extends HttpServlet {
 			int i = ps.executeUpdate();
 			
 			System.out.println(i + " course added");
+			ps = conn.prepareStatement("select course_id from course_table where course_name='"+course_name+"'");
+			ResultSet rs = ps.executeQuery();
+			request.setAttribute("course_id", rs.getInt(1));
+			request.getRequestDispatcher("add_module.jsp").forward(request, response);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

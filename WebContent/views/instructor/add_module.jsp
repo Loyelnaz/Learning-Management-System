@@ -7,11 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-Hi Instructor!<br>
 
-<form action="add_course.jsp" method="post">
-	<input type="submit" value="Add Course"><br>
+<form action="add_module" method="post">
+	Module Name: <input type="text" name="module_name">
+	Module Description: <textarea rows="4" cols="20" name="description"></textarea>
+	<input type="submit" value="Add Module">
 </form>
-<a href="add_module.jsp">Add Module</a>
+
 </body>
 </html>
