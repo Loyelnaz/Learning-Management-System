@@ -23,6 +23,7 @@
 	ps.setInt(1, user_id);
 	rs = ps.executeQuery();
 	
+	if(rs.next()) {
 %>
 <form action="editprofile" method="post">
 	<input type="text" value="<%=rs.getString("first_name")%>" name="first_name"><br>
@@ -31,6 +32,8 @@
 	<input type="text" value="<%=rs.getString("emailid")%>" name="emailid"><br>
 	<input type="text" value="<%=rs.getString("phoneno")%>" name="phoneno"><br>
 	<input type="text" value="<%=rs.getString("username")%>" name="username"><br>
+	<input type="submit" value="Save">
 </form>
+<%} %>
 </body>
 </html>

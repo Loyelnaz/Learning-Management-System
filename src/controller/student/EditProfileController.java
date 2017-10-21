@@ -54,7 +54,7 @@ public class EditProfileController extends HttpServlet {
 		
 		conn = new DBConnector().getConnection();
 		try {
-			ps = conn.prepareStatement("update user_table set first_name=?, middle_name=?, last_name=?, emailid=?, phoneno=?, username=? where user_id=?");
+			ps = conn.prepareStatement("update user_table set first_name=?, middle_name=?, last_name=?, emailid=?, phoneno=?, username=? where uid=?");
 			ps.setString(1, first_name);
 			ps.setString(2, middle_name);
 			ps.setString(3, last_name);
@@ -68,7 +68,7 @@ public class EditProfileController extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		response.sendRedirect("login.jsp");
+		response.sendRedirect("profile.jsp");
 	}
 
 }
