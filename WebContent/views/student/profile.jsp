@@ -12,6 +12,7 @@
 </head>
 <body>
 
+<a href="logout">Logout</a>
 <center style="margin-top: 50px"><h4>Student Profile</h4></center>
 
 <center>
@@ -33,16 +34,19 @@
 	ps.setInt(1, user_id);
 	rs = ps.executeQuery();
 	
-	if(rs.next()) {
-		out.print("<center style='margin-top:30px'>");
-		out.print("<label>First Name: "+rs.getString(2)+"</label><br>");
-		out.print("<label>Middle Name: "+rs.getString(3)+"</label><br>");
-		out.print("<label>Last Name: "+rs.getString(4)+"</label><br>");
-		out.print("<label>Email ID: "+rs.getString(5)+"</label><br>");
-		out.print("<label>Phone No: "+rs.getString(6)+"</label><br>");
-		out.print("<label>User Name: "+rs.getString(7)+"</label><br>");
-		out.print("</center>");
+	if(httpsession != null) {
+		if(rs.next()) {
+			out.print("<center style='margin-top:30px'>");
+			out.print("<label>First Name: "+rs.getString(2)+"</label><br>");
+			out.print("<label>Middle Name: "+rs.getString(3)+"</label><br>");
+			out.print("<label>Last Name: "+rs.getString(4)+"</label><br>");
+			out.print("<label>Email ID: "+rs.getString(5)+"</label><br>");
+			out.print("<label>Phone No: "+rs.getString(6)+"</label><br>");
+			out.print("<label>User Name: "+rs.getString(7)+"</label><br>");
+			out.print("</center>");
+		}	
 	}
+	
 %>
 
 </body>
