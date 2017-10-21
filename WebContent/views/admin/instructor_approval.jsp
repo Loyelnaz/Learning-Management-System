@@ -17,7 +17,8 @@
 		while(inactive_instructor.next()) {
 			out.print(inactive_instructor.getString(2));
 		}
-		out.print("<a href='approve'>Approve</a>");
+		out.print("<form action='instructor_approval' method='post'><input type='submit' value='Approve'></input></form>");
 	%>
+	<!--out.print("<a href='instructor_approval'>Approve</a>");-->
 </body>
 </html>

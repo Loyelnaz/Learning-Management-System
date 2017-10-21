@@ -57,7 +57,8 @@ public class InstructorApproval extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("Post");
-		doGet(request, response);
+		request.getRequestDispatcher("instructor_approval.jsp").forward(request, response);
+//		doGet(request, response);
 	}
 
 }
