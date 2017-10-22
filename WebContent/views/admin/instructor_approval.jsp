@@ -11,14 +11,33 @@
 <body>
 	Hi Instructor Approval page!
 	
+	<table style="border: 1px solid black">
+	<tr>
+		<th>First Name</th>
+		<th>Middle Name</th>
+		<th>Last Name</th>
+		<th>Email ID</th>
+		<th>Phone No</th>
+		<th>User Name</th>
+		<th>Status</th>
+	</tr>
 	<%
 		ResultSet inactive_instructor = (ResultSet) request.getAttribute("inactive");
-	
+		
 		while(inactive_instructor.next()) {
-			out.print(inactive_instructor.getString(2));
+			out.print("<tr>");
+			out.print("<td>" + inactive_instructor.getString(2) + "</td>");
+			out.print("<td>" + inactive_instructor.getString(3) + "</td>");
+			out.print("<td>" + inactive_instructor.getString(4) + "</td>");
+			out.print("<td>" + inactive_instructor.getString(5) + "</td>");
+			out.print("<td>" + inactive_instructor.getString(6) + "</td>");
+			out.print("<td>" + inactive_instructor.getString(6) + "</td>");
+			int uid = inactive_instructor.getInt(1);
+			out.print("<td><a href='approve?uid='"+uid+"''>Approve</a></td>");
+			out.print("</tr>");
 		}
-		out.print("<form action='instructor_approval' method='post'><input type='submit' value='Approve'></input></form>");
 	%>
-	<!--out.print("<a href='instructor_approval'>Approve</a>");-->
+	</table>
+	<!--out.print("<form action='instructor_approval?uid=' method='post'><input type='submit' value='Approve'></input></form>");-->
 </body>
 </html>
