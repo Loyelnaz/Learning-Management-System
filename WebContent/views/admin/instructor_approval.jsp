@@ -31,9 +31,9 @@
 			out.print("<td>" + inactive_instructor.getString(4) + "</td>");
 			out.print("<td>" + inactive_instructor.getString(5) + "</td>");
 			out.print("<td>" + inactive_instructor.getString(6) + "</td>");
-			out.print("<td>" + inactive_instructor.getString(6) + "</td>");
+			out.print("<td>" + inactive_instructor.getString(7) + "</td>");
 			int uid = inactive_instructor.getInt(1);
-			out.print("<td><a href='approve?uid='"+uid+"''>Approve</a></td>");
+			out.print("<td><a href='approve?uid="+uid+"'>Approve</a></td>");
 			out.print("</tr>");
 		}
 	%>
