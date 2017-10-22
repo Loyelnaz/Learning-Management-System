@@ -35,7 +35,7 @@ Courses
 	else {
 		out.print("(Not Enrolled)");
 		out.print("<br>");
-		out.print("<form action='coursepage' method='post'><input type='submit' value='Enroll Now'></form>");
+		out.print("<form action='enrollnow' method='post'><input type='submit' value='Enroll Now'><input type='hidden' name='course_id' value='"+course_id+"'></form>");
 		while(rs.next()) {
 			out.print("Module " + i + ": " + rs.getString(2) + "<br>");
 			i = i + 1;

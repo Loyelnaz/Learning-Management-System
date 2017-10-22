@@ -89,7 +89,8 @@ public class CourseContentController extends HttpServlet {
 //		response.sendRedirect("coursepage.jsp?course_id='"+course_id+"'");
 //		request.getRequestDispatcher("coursepage.jsp").forward(request, response);
 //		request.getRequestDispatcher("coursepage.jsp?course_id="+course_id+"").forward(request, response);
-		doGet(request, response);
+//		doGet(request, response);
+		
 	}
 
 }

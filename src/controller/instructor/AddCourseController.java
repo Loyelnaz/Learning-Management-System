@@ -5,6 +5,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import java.sql.*;
 import database.*;
 
@@ -34,8 +36,6 @@ public class AddCourseController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//		doGet(request, response);
 		
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -44,16 +44,19 @@ public class AddCourseController extends HttpServlet {
 		String course_name = request.getParameter("course_name");
 		String course_description = request.getParameter("course_description");
 		int category = Integer.parseInt(request.getParameter("category"));
+		HttpSession httpsession = request.getSession(true);
+		int user_id = (Integer) httpsession.getAttribute("user_id");
 		
 		System.out.println(course_name);
 		System.out.println(course_description);
 		System.out.println(category);
 		
 		try {
-			ps = conn.prepareStatement("insert into course_table (course_name, course_description, catid) values (?,?,?)");
+			ps = conn.prepareStatement("insert into course_table (course_name, course_description, catid) values (?,?,?,?)");
 			ps.setString(1, course_name);
 			ps.setString(2, course_description);
 			ps.setInt(3, category);
+			ps.setInt(4, user_id);
 			int i = ps.executeUpdate();
 			
 			System.out.println(i + " course added");

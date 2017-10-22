@@ -196,4 +196,14 @@
     <servlet-name>UploadPicture</servlet-name>
     <url-pattern>/views/student/upload_picture</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CourseEnrollController</display-name>
+    <servlet-name>CourseEnrollController</servlet-name>
+    <servlet-class>controller.student.CourseEnrollController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CourseEnrollController</servlet-name>
+    <url-pattern>/views/student/enrollnow</url-pattern>
+  </servlet-mapping>
 </web-app>

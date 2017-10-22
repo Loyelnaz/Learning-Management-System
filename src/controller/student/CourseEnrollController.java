@@ -1,25 +1,24 @@
-package controller.instructor;
+package controller.student;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.*;
-import database.*;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.sql.*;
+import database.*;
 
 /**
- * Servlet implementation class AddModuleController
+ * Servlet implementation class CourseEnrollController
  */
-public class AddModuleController extends HttpServlet {
+public class CourseEnrollController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddModuleController() {
+    public CourseEnrollController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,17 +40,26 @@ public class AddModuleController extends HttpServlet {
 		
 		Connection conn = null;
 		PreparedStatement ps = null;
-		PrintWriter out = response.getWriter();
+		
+		HttpSession httpsession = request.getSession(true);
+		int user_id = (Integer) httpsession.getAttribute("user_id");
 		
 		int course_id = Integer.parseInt(request.getParameter("course_id"));
-		System.out.println("Servlet Course ID: " + course_id);
 		
+		conn = new DBConnector().getConnection();
 		
-		
-		out.print("Module added!");
-		request.setAttribute("course_id", course_id);
-		RequestDispatcher rd = request.getRequestDispatcher("add_module.jsp");
-		rd.include(request, response);
+		try {
+			ps = conn.prepareStatement("insert into course_enrolment values (?,?)");
+			ps.setInt(1, user_id);
+			ps.setInt(2, course_id);
+			ps.executeUpdate();
+			
+			request.setAttribute("isEnrolled", true);
+			request.getRequestDispatcher("coursepage.jsp?course_id="+course_id+"").forward(request, response);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
