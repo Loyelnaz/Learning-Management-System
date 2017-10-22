@@ -186,4 +186,14 @@
     <servlet-name>AdminServlet</servlet-name>
     <url-pattern>/servlet/AdminServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UploadPicture</display-name>
+    <servlet-name>UploadPicture</servlet-name>
+    <servlet-class>controller.student.UploadPicture</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadPicture</servlet-name>
+    <url-pattern>/views/student/upload_picture</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -58,7 +58,7 @@ public class InstructorApproval extends HttpServlet {
 		// TODO Auto-generated method stub
 		System.out.println("Post");
 		request.getRequestDispatcher("instructor_approval.jsp").forward(request, response);
-//		doGet(request, response);
+		doGet(request, response);
 	}
 
 }

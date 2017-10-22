@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@page language="java" import="java.sql.*" %>
     <%@page language="java" import="database.*" %>
+    <%@page language="java" import="controller.student.UploadPicture"%>
     <%@page language="java" import="javax.servlet.http.HttpSession" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -16,6 +17,8 @@
 <center style="margin-top: 50px"><h4>Student Profile</h4></center>
 
 <center>
+	<a href="upload_picture.jsp"><button class="btn btn-primary">Upload Picture</button></a>
+	
 	<form action="editprofile.jsp" method="post">
 		<input type="submit" value="Edit Profile" class="btn btn-primary">
 	</form>
