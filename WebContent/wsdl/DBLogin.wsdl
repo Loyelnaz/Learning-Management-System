@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://database" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://database" xmlns:intf="http://database" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://database" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="isLogged">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="tablename" type="xsd:string"/>
+      <element name="usertype" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isLoggedResponse">
+    <complexType>
+     <sequence>
+      <element name="isLoggedReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="isLoggedRequest">
+
+      <wsdl:part element="impl:isLogged" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="isLoggedResponse">
+
+      <wsdl:part element="impl:isLoggedResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="DBLogin">
+
+      <wsdl:operation name="isLogged">
+
+         <wsdl:input message="impl:isLoggedRequest" name="isLoggedRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:isLoggedResponse" name="isLoggedResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="DBLoginSoapBinding" type="impl:DBLogin">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="isLogged">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="isLoggedRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="isLoggedResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="DBLoginService">
+
+      <wsdl:port binding="impl:DBLoginSoapBinding" name="DBLogin">
+
+         <wsdlsoap:address location="http://localhost:9999/LMS/services/DBLogin"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

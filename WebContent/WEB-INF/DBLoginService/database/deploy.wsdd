@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from DBLoginService WSDL service -->
+
+  <service name="DBLogin" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://database"/>
+      <parameter name="wsdlServiceElement" value="DBLoginService"/>
+      <parameter name="schemaQualified" value="http://database"/>
+      <parameter name="wsdlServicePort" value="DBLogin"/>
+      <parameter name="className" value="database.DBLogin"/>
+      <parameter name="wsdlPortType" value="DBLogin"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://database" xmlns:retNS="http://database" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="isLogged" qname="operNS:isLogged" returnQName="retNS:isLoggedReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://database" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:username" type="tns:string"/>
+        <parameter xmlns:pns="http://database" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:password" type="tns:string"/>
+        <parameter xmlns:pns="http://database" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:tablename" type="tns:string"/>
+        <parameter xmlns:pns="http://database" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:usertype" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="isLogged"/>
+
+  </service>
+</deployment>
