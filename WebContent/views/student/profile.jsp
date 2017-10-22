@@ -4,6 +4,7 @@
     <%@page language="java" import="database.*" %>
     <%@page language="java" import="controller.student.UploadPicture"%>
     <%@page language="java" import="javax.servlet.http.HttpSession" %>
+    <%@page language="java" import="java.io.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,6 +14,32 @@
 </head>
 <body>
 
+<%
+	HttpSession httpsession = request.getSession(true);
+	int user_id = (Integer) httpsession.getAttribute("user_id");
+	
+	Connection conn = null;
+	PreparedStatement ps = null;
+	ResultSet rs = null;
+	OutputStream os = null;
+	
+	conn = new DBConnector().getConnection();
+%>
+<!-- 
+ps = conn.prepareStatement("select * from user_photo where uid=?");
+    ps.setInt(1, user_id);
+    rs = ps.executeQuery();
+ 
+    if(rs.next()){
+    	Blob image = rs.getBlob(2);
+    	byte[] imgData = image.getBytes(1,(int)image.length());
+ 
+        response.setContentType("image/jpg");
+        os = response.getOutputStream();
+        out.print(os.write(imgData));
+        os.flush();
+        os.close();
+    } -->
 <a href="logout">Logout</a>
 <center style="margin-top: 50px"><h4>Student Profile</h4></center>
 
@@ -25,14 +52,7 @@
 </center>
 
 <%
-	HttpSession httpsession = request.getSession(true);
-	int user_id = (Integer) httpsession.getAttribute("user_id");
-	
-	Connection conn = null;
-	PreparedStatement ps = null;
-	ResultSet rs = null;
-	
-	conn = new DBConnector().getConnection();
+
 	ps = conn.prepareStatement("select * from user_table where uid=?");
 	ps.setInt(1, user_id);
 	rs = ps.executeQuery();

@@ -62,7 +62,8 @@ public class UploadPicture extends HttpServlet {
 			catch(Exception e){
 				e.printStackTrace();
 			}	
-			finally{
+			finally
+			{
 				if(conn != null){
 					try{
 						conn.close();
