@@ -38,6 +38,6 @@
 		}
 	%>
 	</table>
-	<!--out.print("<form action='instructor_approval?uid=' method='post'><input type='submit' value='Approve'></input></form>");-->
+	
 </body>
 </html>

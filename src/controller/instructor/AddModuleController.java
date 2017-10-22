@@ -2,7 +2,8 @@ package controller.instructor;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
+import java.sql.*;
+import database.*;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -38,7 +39,15 @@ public class AddModuleController extends HttpServlet {
 		// TODO Auto-generated method stub
 //		doGet(request, response);
 		
+		Connection conn = null;
+		PreparedStatement ps = null;
 		PrintWriter out = response.getWriter();
+		
+		int course_id = Integer.parseInt(request.getParameter("course_id"));
+		System.out.println("Servlet Course ID: " + course_id);
+		
+		
+		
 		out.print("Module added!");
 		RequestDispatcher rd = request.getRequestDispatcher("add_module.jsp");
 		rd.include(request, response);

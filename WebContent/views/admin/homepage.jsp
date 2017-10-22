@@ -9,9 +9,9 @@
 <body>
 
 <a href="instructor_approval">Approve Instructor</a>
-<a href="add_instructor">Add Instructor</a>
+<a href="add_instructor.jsp">Add Instructor</a>
 
-<form action="add_instructor" method="post">
+<!-- <form action="add_instructor" method="post">
 	<label>First Name: </label><input type="text" name="first_name"><br>
 	<label>Middle Name: </label><input type="text" name="middle_name"><br>
 	<label>Last Name: </label><input type="text" name="last_name"><br>
@@ -20,6 +20,6 @@
 	<label>User Name: </label><input type="text" name="username"><br>
 	<label>Password: </label><input type="password" name="password"><br>
 	<input type="submit" value="Add Instructor">
-</form>
+</form> -->
 </body>
 </html>

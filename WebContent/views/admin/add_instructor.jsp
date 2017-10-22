@@ -7,9 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-Hi! Add instructor here!
 
-<form style="display:none" action="add_instructor" method="post">
+<h4>Add instructor</h4>
+
+<form action="add_instructor" method="post">
 	<label>First Name: </label><input type="text" name="first_name"><br>
 	<label>Middle Name: </label><input type="text" name="middle_name"><br>
 	<label>Last Name: </label><input type="text" name="last_name"><br>

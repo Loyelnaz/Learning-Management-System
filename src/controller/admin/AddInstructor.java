@@ -29,8 +29,6 @@ public class AddInstructor extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		System.out.println("Add Instructor");
 	}
 
 	/**
@@ -72,8 +70,8 @@ public class AddInstructor extends HttpServlet {
 			e.printStackTrace();
 		} 
 //		request.setAttribute("success", "Instructor added successfully.");
-//		rd = request.getRequestDispatcher("add_instructor.jsp");
-//		rd.include(request, response);
+		rd = request.getRequestDispatcher("homepage.jsp");
+		rd.include(request, response);
 	}
 
 }

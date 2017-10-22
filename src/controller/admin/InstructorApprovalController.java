@@ -44,7 +44,6 @@ public class InstructorApprovalController extends HttpServlet {
 			rd = request.getRequestDispatcher("/views/admin/instructor_approval");
 			rd.forward(request, response);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -8,9 +8,15 @@
 </head>
 <body>
 
+<%
+	int course_id = (int) request.getAttribute("course_id");
+	System.out.println("JSP Course ID: " + course_id);
+%>
+
 <form action="add_module" method="post">
 	Module Name: <input type="text" name="module_name">
 	Module Description: <textarea rows="4" cols="20" name="description"></textarea>
+	<input type="hidden" name="course_id" value=<%=course_id %>>
 	<input type="submit" value="Add Module">
 </form>
 
