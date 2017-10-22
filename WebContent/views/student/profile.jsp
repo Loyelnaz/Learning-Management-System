@@ -16,7 +16,6 @@
 
 <%
 	HttpSession httpsession = request.getSession(true);
-	int user_id = (Integer) httpsession.getAttribute("user_id");
 	
 	Connection conn = null;
 	PreparedStatement ps = null;
@@ -52,22 +51,28 @@ ps = conn.prepareStatement("select * from user_photo where uid=?");
 </center>
 
 <%
-
-	ps = conn.prepareStatement("select * from user_table where uid=?");
-	ps.setInt(1, user_id);
-	rs = ps.executeQuery();
-	
 	if(httpsession != null) {
-		if(rs.next()) {
-			out.print("<center style='margin-top:30px'>");
-			out.print("<label>First Name: "+rs.getString(2)+"</label><br>");
-			out.print("<label>Middle Name: "+rs.getString(3)+"</label><br>");
-			out.print("<label>Last Name: "+rs.getString(4)+"</label><br>");
-			out.print("<label>Email ID: "+rs.getString(5)+"</label><br>");
-			out.print("<label>Phone No: "+rs.getString(6)+"</label><br>");
-			out.print("<label>User Name: "+rs.getString(7)+"</label><br>");
-			out.print("</center>");
-		}	
+		if(httpsession.getAttribute("user_id") != null) {
+			int user_id = (Integer) httpsession.getAttribute("user_id");
+			
+			ps = conn.prepareStatement("select * from user_table where uid=?");
+			ps.setInt(1, user_id);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				out.print("<center style='margin-top:30px'>");
+				out.print("<label>First Name: "+rs.getString(2)+"</label><br>");
+				out.print("<label>Middle Name: "+rs.getString(3)+"</label><br>");
+				out.print("<label>Last Name: "+rs.getString(4)+"</label><br>");
+				out.print("<label>Email ID: "+rs.getString(5)+"</label><br>");
+				out.print("<label>Phone No: "+rs.getString(6)+"</label><br>");
+				out.print("<label>User Name: "+rs.getString(7)+"</label><br>");
+				out.print("</center>");
+			}	
+		}
+		else {
+			response.sendRedirect("login.jsp");
+		}
 	}
 	
 %>
