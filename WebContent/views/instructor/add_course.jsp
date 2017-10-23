@@ -6,16 +6,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
+<title>Add Course</title>
 </head>
 <body>
 
 <%@include file="link.jsp"%>
 
+<center style="margin-top:40px">
 <h4>Add Course</h4>
+
 <form action="add_course" method="post">
-	Course Name: <input type="text" name="course_name"><br>
-	Course Description: <textarea rows="4" cols="20" name="course_description"></textarea>
+	Course Name: <input type="text" name="course_name" style="margin-left:35px;margin-bottom:10px"><br>
+	Course Description: <textarea rows="4" cols="20" name="course_description" style="margin-bottom:10px"></textarea><br>
+	Course Category: 
 	<select name="category">
 	<%
 		Connection conn = null;
@@ -27,12 +31,13 @@
 		category = ps.executeQuery();
 		
 		while(category.next()) {
-			out.print("<option value='"+category.getInt(1)+"'>"+category.getString(2)+"</option>");
+			out.print("<option value='"+category.getInt(1)+"'>"+category.getString(2)+"</option><br>");
 		}
 	%>
 	</select>
-
-	<input type="submit" value="Add Course">
+	<br>
+	<input type="submit" value="Add Course" class="btn btn-primary" style="margin-top:30px">
 </form>
+</center>
 </body>
 </html>

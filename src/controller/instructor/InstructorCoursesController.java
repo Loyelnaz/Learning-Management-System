@@ -42,7 +42,7 @@ public class InstructorCoursesController extends HttpServlet {
 			ps.setInt(1, user_id);
 			instructor_courses = ps.executeQuery();
 			
-			if(instructor_courses.next()) {
+			if(instructor_courses.isBeforeFirst()) {
 				request.setAttribute("instructor_courses", instructor_courses);
 			}
 			

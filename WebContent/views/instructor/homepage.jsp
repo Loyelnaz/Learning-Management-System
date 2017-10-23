@@ -4,11 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
+<title>Instructor Home Page</title>
 </head>
 <body>
 
-<%@include file="link.jsp"%>
-
+	<%@include file="link.jsp"%>
+	
 </body>
 </html>

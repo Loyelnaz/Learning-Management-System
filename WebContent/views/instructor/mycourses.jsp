@@ -5,23 +5,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
+<title>My Courses</title>
 </head>
 <body>
 
 <%@include file="link.jsp"%>
 
-<h4>Instructor Courses</h4><br>
+<h4 style="margin-top:20px">Instructor Courses</h4><br>
 
 <%
 	ResultSet instructor_courses = (ResultSet)request.getAttribute("instructor_courses");
-	
-	out.print("Name: " + instructor_courses.getString(2) + "<br>");
-	out.print("Description: " + instructor_courses.getString(3) + "<br>");
 
 	while(instructor_courses.next()) {
-		out.print("Name: " + instructor_courses.getString(2) + "<br>");
-		out.print("Description: " + instructor_courses.getString(3) + "<br>");
+		out.print("<h5>" + instructor_courses.getString(2) + "</h5>");
+		out.print("<i>" + instructor_courses.getString(3) + "</i><br><br>");
 	}
 %>
 <!-- out.print("<a href='coursepage?course_id="+course.getInt(1)+"'>Go to course</a><br>"); -->

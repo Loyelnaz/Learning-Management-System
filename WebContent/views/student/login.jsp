@@ -25,7 +25,7 @@
 	
 </form>
 
-<center style="margin-top:20px">
+<center >
 Don't have an account?<a href="register.jsp"> Register</a>
 </center>
 </body>

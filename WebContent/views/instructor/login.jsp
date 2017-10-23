@@ -4,13 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
 <title>Instructor Login Page</title>
 </head>
 <body>
 
-<h4>Instructor Login</h4>
+<center><h4 style="margin-top: 120px;margin-bottom:30px">Instructor Login</h4>
 
 <form action="login" method="post">
+	
 	<%
 		String message = (String)request.getAttribute("error");
 		if(message != null) 
@@ -18,9 +20,12 @@
 	%>
 	<label>Username: </label><input type="text" name="username"><br>
 	<label>Password: </label><input type="password" name="password"><br>
-	<input type="submit" value="Login"><br>
-	<a href="register.jsp">Register</a>
+	<input type="submit" value="Login" class="btn btn-primary"><br>
+
 </form>
+</center>
+
+<center style="margin-top:20px">Don't have an account?<a href="register.jsp"> Register</a></center>
 
 </body>
 </html>

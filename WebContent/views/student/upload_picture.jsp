@@ -4,17 +4,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
+<title>Upload Image - Student</title>
 </head>
 <body>
 
 <%@include file="link.jsp"%>
 
-<h4>Upload Profile Picture</h4>
+<center>
+	<h4>Upload Profile Picture</h4>
 
-<form action="upload_picture" method="post" enctype="multipart/form-data">
-	<input type="file" name="photo"><br>
-	<input type="submit" value="Upload Picture">
-</form>
+	<form action="upload_picture" method="post" enctype="multipart/form-data">
+		<input type="file" name="photo"><br>
+		<input type="submit" value="Upload Picture" class="">
+	</form>
+</center>
+
 </body>
 </html>

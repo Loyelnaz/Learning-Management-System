@@ -8,9 +8,10 @@
 </head>
 <body>
 
-<a href="homepage.jsp">Home</a>
-<a href="mycourses">My Courses</a>
-<a href="add_course.jsp">Add Course</a>
-
+<center style="margin-top:40px">
+	<a href="homepage.jsp" style="margin-right:35px">Home</a>
+	<a href="mycourses" style="margin-right:35px">My Courses</a>
+	<a href="add_course.jsp" style="margin-right:35px">Add Course</a>
+</center>
 </body>
 </html>
