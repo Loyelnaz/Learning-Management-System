@@ -29,7 +29,13 @@ public class AddCourseController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -40,10 +46,6 @@ public class AddCourseController extends HttpServlet {
 		int category = Integer.parseInt(request.getParameter("category"));
 		HttpSession httpsession = request.getSession(true);
 		int user_id = (Integer) httpsession.getAttribute("user_id");
-		
-		System.out.println(course_name);
-		System.out.println(course_description);
-		System.out.println(category);
 		
 		try {
 			ps = conn.prepareStatement("insert into course_table (course_name, course_description, catid, uid, is_active) values (?,?,?,?,?)");
@@ -66,13 +68,6 @@ public class AddCourseController extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Hello");
 	}
 
 }
