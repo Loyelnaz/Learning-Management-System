@@ -15,3 +15,9 @@ input[type="submit"] {
   	display: inline-block;
   	margin-left: 110px;
 }
+.nav-item li {
+	list-style: none !important;
+}
+.nav-item a {
+	color: #fff;
+}

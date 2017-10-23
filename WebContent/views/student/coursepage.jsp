@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -35,7 +36,7 @@ Courses
 	else {
 		out.print("(Not Enrolled)");
 		out.print("<br>");
-		out.print("<form action='enrollnow' method='post'><input type='submit' value='Enroll Now'><input type='hidden' name='course_id' value='"+course_id+"'></form>");
+		out.print("<form action='enrollnow' method='post'><input type='submit' value='Enroll Now' class='btn btn-primary'><input type='hidden' name='course_id' value='"+course_id+"'></form>");
 		while(rs.next()) {
 			out.print("Module " + i + ": " + rs.getString(2) + "<br>");
 			i = i + 1;
@@ -43,9 +44,6 @@ Courses
 	}
 	
 %>
-<!-- out.print("<a href='coursepage?course_id="+rs.getInt(1)+"'>Enroll Now</a><br>"); -->
-	<!--out.print("<form action='coursepage?course_id="+rs.getInt(1)+"' method='post'><input type='submit' value='Enroll Now'></form>");-->
-
 
 </body>
 </html>
