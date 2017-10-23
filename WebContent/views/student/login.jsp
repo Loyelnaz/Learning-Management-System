@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<h4>Student Login</h4>
+
 <form action="login" method="post" style="margin-top: 120px">
 	<%
 		String message = (String)request.getAttribute("error");

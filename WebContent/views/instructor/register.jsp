@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<h4>Instructor Registration</h4>
+
 <form action="register" method="post">
 	<label>First Name: </label><input type="text" name="first_name"><br>
 	<label>Middle Name: </label><input type="text" name="middle_name"><br>

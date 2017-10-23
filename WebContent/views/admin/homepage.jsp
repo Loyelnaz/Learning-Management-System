@@ -11,7 +11,7 @@
 <a href="course_approval">Approve Courses</a>
 <a href="instructor_approval">Approve Instructor</a>
 <a href="add_instructor.jsp">Add Instructor</a>
-<a href="logout">Logout</a>
+<a href="login.jsp">Logout</a>
 
 <!-- <form action="add_instructor" method="post">
 	<label>First Name: </label><input type="text" name="first_name"><br>

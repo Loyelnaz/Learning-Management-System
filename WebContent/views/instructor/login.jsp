@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<h4>Instructor Login</h4>
+
 <form action="login" method="post">
 	<%
 		String message = (String)request.getAttribute("error");

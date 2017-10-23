@@ -11,6 +11,8 @@
 </head>
 <body>
 
+<h4>Student Registration</h4>
+
 <form action="register" method="post" style="margin-top: 120px">
 	<center>
 		<label>First Name: </label><input type="text" name="first_name"><br>
