@@ -11,6 +11,7 @@
 <a href="course_approval">Approve Courses</a>
 <a href="instructor_approval">Approve Instructor</a>
 <a href="add_instructor.jsp">Add Instructor</a>
+<a href="course_available">Available Courses</a>
 <a href="login.jsp">Logout</a>
 
 <!-- <form action="add_instructor" method="post">
