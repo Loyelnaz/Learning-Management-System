@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -15,12 +16,15 @@
 	System.out.println("JSP Course ID: " + course_id);
 %>
 
+<center style="margin-top:40px">
+<h4>Add Module</h4>
 <form action="add_module" method="post">
-	Module Name: <input type="text" name="module_name">
-	Module Description: <textarea rows="4" cols="20" name="description"></textarea>
+	Module Name: <input type="text" name="module_name" style="margin-left:35px;margin-bottom:10px">
+	Module Description: <textarea rows="4" cols="20" name="description" style="margin-bottom:10px"></textarea>
 	<input type="hidden" name="course_id" value=<%=course_id %>>
-	<input type="submit" value="Add Module">
+	<input type="submit" value="Add Module" class="btn btn-primary" style="margin-top:30px">
 </form>
+</center>
 
 </body>
 </html>
