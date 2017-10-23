@@ -216,4 +216,14 @@
     <servlet-name>InstructorCoursesController</servlet-name>
     <url-pattern>/views/instructor/mycourses</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ApprovalCourseList</display-name>
+    <servlet-name>ApprovalCourseList</servlet-name>
+    <servlet-class>controller.admin.ApprovalCourseList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ApprovalCourseList</servlet-name>
+    <url-pattern>/views/admin/course_approval</url-pattern>
+  </servlet-mapping>
 </web-app>

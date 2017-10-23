@@ -5,20 +5,21 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import java.sql.*;
 import database.*;
 
 /**
- * Servlet implementation class InstructorApproval
+ * Servlet implementation class ApprovalCourseList
  */
-public class InstructorApproval extends HttpServlet {
+public class ApprovalCourseList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InstructorApproval() {
+    public ApprovalCourseList() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,18 +34,24 @@ public class InstructorApproval extends HttpServlet {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
+//		HttpSession session = request.getSession(true);
+		
+//		int user_id = (Integer) session.getAttribute("admin_id");
 		
 		conn = new DBConnector().getConnection();
 		try {
-			ps = conn.prepareStatement("select * from user_table where is_active=? and ugid=(select ugid from user_group where group_name=?)");
+			ps = conn.prepareStatement("select * from course_table where is_active=?");
 			ps.setBoolean(1, false);
-			ps.setString(2, "instructor");
 			rs = ps.executeQuery();
 //			while(rs.next()) {
 //				System.out.println("Name: " + rs.getString(2));
 //			}
-			request.setAttribute("inactive", rs);
-			request.getRequestDispatcher("instructor_approval.jsp").forward(request, response);
+			if(rs.next()) {
+				System.out.println("Course_name: " + rs.getString(2));
+				request.setAttribute("inactive", rs);
+			}
+			
+			request.getRequestDispatcher("course_approval.jsp").forward(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -56,11 +63,7 @@ public class InstructorApproval extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("Post");
-		int uid = Integer.parseInt(request.getParameter("uid"));
-		System.out.println("USER ID: " + uid);
-		//request.getRequestDispatcher("instructor_approval.jsp").forward(request, response);
-		//doGet(request, response);
+		doGet(request, response);
 	}
 
 }
