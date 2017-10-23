@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<%@include file="link.jsp"%>
+
 <h4>Instructor Courses</h4><br>
 
 <%

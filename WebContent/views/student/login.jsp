@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<!--<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">-->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
 <title>Student Login Page</title>
 </head>
 <body>
 
-<h4>Student Login</h4>
+<center style="margin-top: 120px;margin-bottom:30px"><h4>Student Login</h4></center>
 
-<form action="login" method="post" style="margin-top: 120px">
+<form action="login" method="post">
 	<%
 		String message = (String)request.getAttribute("error");
 		if(message != null) 
@@ -25,7 +25,7 @@
 	
 </form>
 
-<center>
+<center style="margin-top:20px">
 Don't have an account?<a href="register.jsp"> Register</a>
 </center>
 </body>

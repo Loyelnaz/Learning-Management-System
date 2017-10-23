@@ -9,6 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<%@include file="link.jsp"%>
+
 <h4>Add Course</h4>
 <form action="add_course" method="post">
 	Course Name: <input type="text" name="course_name"><br>

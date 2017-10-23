@@ -246,4 +246,14 @@
     <servlet-name>AvailableCourses</servlet-name>
     <url-pattern>/views/admin/course_available</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmailValidator</display-name>
+    <servlet-name>EmailValidator</servlet-name>
+    <servlet-class>database.EmailValidator</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmailValidator</servlet-name>
+    <url-pattern>/EmailValidator</url-pattern>
+  </servlet-mapping>
 </web-app>

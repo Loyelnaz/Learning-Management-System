@@ -5,15 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<!--<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/custom.css" type="text/css">-->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/custom.css" type="text/css">
 <title>Student Registration Page</title>
 </head>
 <body>
 
-<h4>Student Registration</h4>
+<center style="margin-top: 100px;margin-left:60px;margin-bottom:30px"><h4>Student Registration</h4></center>
 
-<form action="register" method="post" style="margin-top: 120px">
+<form action="register" method="post">
 	<center>
 		<label>First Name: </label><input type="text" name="first_name"><br>
 		<label>Middle Name: </label><input type="text" name="middle_name"><br>
@@ -26,7 +26,7 @@
 	</center>
 </form>
 
-<center>
+<center style="margin-left:70px;margin-top:30px">
 Have an account?<a href="login.jsp"> Login</a>
 </center>
 

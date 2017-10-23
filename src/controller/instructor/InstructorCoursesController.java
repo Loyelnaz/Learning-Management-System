@@ -35,7 +35,6 @@ public class InstructorCoursesController extends HttpServlet {
 		
 		HttpSession httpsession = request.getSession(true);
 		int user_id = (Integer) httpsession.getAttribute("user_id");
-		System.out.println("USER ID: " + user_id);
 		conn = new DBConnector().getConnection();
 		
 		try {

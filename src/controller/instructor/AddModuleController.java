@@ -46,8 +46,6 @@ public class AddModuleController extends HttpServlet {
 		int course_id = Integer.parseInt(request.getParameter("course_id"));
 		System.out.println("Servlet Course ID: " + course_id);
 		
-		
-		
 		out.print("Module added!");
 		request.setAttribute("course_id", course_id);
 		RequestDispatcher rd = request.getRequestDispatcher("add_module.jsp");

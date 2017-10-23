@@ -8,7 +8,9 @@
 </head>
 <body>
 
-<%@include file="link.jsp"%>
+<a href="homepage.jsp">Home</a>
+<a href="mycourses">My Courses</a>
+<a href="add_course.jsp">Add Course</a>
 
 </body>
 </html>

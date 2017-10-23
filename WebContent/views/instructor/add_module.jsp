@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<%@include file="link.jsp"%>
+
 <%
 	int course_id = (int) request.getAttribute("course_id");
 	System.out.println("JSP Course ID: " + course_id);
