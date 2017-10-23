@@ -10,6 +10,7 @@
 
 <%@include file="link.jsp"%>
 
+<center style="margin-top:20px">
 <h4>Add instructor</h4>
 
 <form action="add_instructor" method="post">
@@ -20,8 +21,9 @@
 	<label>Phone No: </label><input type="text" name="phoneno"><br>
 	<label>User Name: </label><input type="text" name="username"><br>
 	<label>Password: </label><input type="password" name="password"><br>
-	<input type="submit" value="Add Instructor">
+	<input type="submit" value="Add Instructor" class="btn btn-primary">
 </form>
+</center>
 
 </body>
 </html>

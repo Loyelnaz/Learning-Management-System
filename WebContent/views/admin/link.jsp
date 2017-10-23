@@ -4,15 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
 <title>Insert title here</title>
 </head>
 <body>
 
-	<a href="course_approval">Approve Courses</a>
-	<a href="instructor_approval">Approve Instructor</a>
-	<a href="add_instructor.jsp">Add Instructor</a>
-	<a href="course_available">Available Courses</a>
-	<a href="login.jsp">Logout</a>
+<center style="margin-top:50px">
+	<a href="course_approval" style="margin-left:20px">Approve Courses</a>
+	<a href="instructor_approval" style="margin-left:20px">Approve Instructor</a>
+	<a href="add_instructor.jsp" style="margin-left:20px">Add Instructor</a>
+	<a href="course_available" style="margin-left:20px">Available Courses</a>
+	<a href="login.jsp" style="margin-left:20px">Logout</a>
+</center>
 
 </body>
 </html>

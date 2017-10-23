@@ -11,15 +11,15 @@
 
 	<%@include file="link.jsp"%>
 	
-	<h4>Course Approval</h4>
+	<h4 style="margin-top:20px">Course Approval</h4>
 	
 	<%
 		ResultSet inactive_course = (ResultSet)request.getAttribute("inactive");
 	
 		while(inactive_course.next()) {
-			out.print("Name: " + inactive_course.getString(2) + "<br>");
-			out.print("Description: " + inactive_course.getString(3) + "<br>");
-			out.print("<a href='approve_course?course_id="+inactive_course.getInt(1)+"'>Approve</a><br>");
+			out.print("<h5>" + inactive_course.getString(2) + "</h5>");
+			out.print("<i>" + inactive_course.getString(3) + "</i><br>");
+			out.print("<a href='approve_course?course_id="+inactive_course.getInt(1)+"'>Approve</a><br><br>");
 		}
 	%>
 

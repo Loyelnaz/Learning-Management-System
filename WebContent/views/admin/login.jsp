@@ -4,10 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
 <title>Admin Login</title>
 </head>
 <body>
 
+<center style="margin-top:130px">
 <h4>Admin Login</h4>
 
 <form action="login" method="post">
@@ -18,8 +20,9 @@
 	%>
 	<label>Username: </label><input type="text" name="username"><br>
 	<label>Password: </label><input type="password" name="password"><br>
-	<input type="submit" value="Login"><br>
+	<input type="submit" value="Login" class="btn btn-primary"><br>
 </form>
+</center>
 
 </body>
 </html>

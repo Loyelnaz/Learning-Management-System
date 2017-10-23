@@ -5,13 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
 <title>Insert title here</title>
 </head>
 <body>
 
 	<%@include file="link.jsp"%>
 	
-	<h4>Available Courses</h4>
+	<h4 style="margin-top:30px">Available Courses</h4>
 	
 	<%
 		ResultSet active_course = (ResultSet)request.getAttribute("active");
@@ -19,8 +20,9 @@
 		
 		if(not_active.equals("")) {
 			while(active_course.next()) {
-				out.print("Name: " + active_course.getString(2) + "<br>");
-				out.print("Description: " + active_course.getString(3) + "<br>");
+				out.print("<h5>" + active_course.getString(2) + "</h5>");
+				out.print("<i>" + active_course.getString(3) + "</i><br>");
+				out.print(active_course.getString(8) + " " + active_course.getString(10) + "<br><br>");
 			}		
 		}
 		else {
@@ -28,6 +30,6 @@
 		}
 	
 	%>
-
+	
 </body>
 </html>

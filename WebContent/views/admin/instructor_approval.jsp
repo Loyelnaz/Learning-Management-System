@@ -12,7 +12,7 @@
 	
 	<%@include file="link.jsp"%>
 		
-	<h4>Instructor Approval</h4>
+	<h4 style="margin-top:20px;margin-bottom:15px">Instructor Approval</h4>
 	
 	<table style="border: 1px solid black">
 	<tr>

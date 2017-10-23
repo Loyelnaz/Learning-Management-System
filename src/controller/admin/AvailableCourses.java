@@ -33,7 +33,7 @@ public class AvailableCourses extends HttpServlet {
 		
 		conn = new DBConnector().getConnection();
 		try {
-			ps = conn.prepareStatement("select * from course_table where is_active=?");
+			ps = conn.prepareStatement("select * from course_table ct inner join user_table ut on ct.is_active=? && ct.uid=ut.uid && ut.ugid=1");
 			ps.setBoolean(1, true);
 			rs = ps.executeQuery();
 			
