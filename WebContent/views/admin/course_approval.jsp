@@ -16,12 +16,12 @@
 	
 	out.print("Name: " + inactive_course.getString(2) + "<br>");
 	out.print("Description: " + inactive_course.getString(3) + "<br>");
-	out.print("<a href='approve?uid="+inactive_course.getInt(1)+"'>Approve</a><br>");
+	out.print("<a href='approve_course?course_id="+inactive_course.getInt(1)+"'>Approve</a><br>");
 
 	while(inactive_course.next()) {
 		out.print("Name: " + inactive_course.getString(2) + "<br>");
 		out.print("Description: " + inactive_course.getString(3) + "<br>");
-		out.print("<a href='approve?uid="+inactive_course.getInt(1)+"'>Approve</a><br>");
+		out.print("<a href='approve_course?course_id="+inactive_course.getInt(1)+"'>Approve</a><br>");
 	}
 %>
 
