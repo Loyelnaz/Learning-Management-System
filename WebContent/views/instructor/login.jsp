@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<a href="/LMS">Home</a>
+
 <center><h4 style="margin-top: 120px;margin-bottom:30px">Instructor Login</h4>
 
 <form action="login" method="post">

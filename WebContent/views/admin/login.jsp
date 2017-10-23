@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<a href="/LMS">Home</a>
+
 <center style="margin-top:130px">
 <h4>Admin Login</h4>
 
