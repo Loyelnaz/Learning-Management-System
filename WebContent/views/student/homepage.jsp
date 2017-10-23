@@ -9,8 +9,8 @@
 </head>
 <body>
 
-<a href="profile.jsp">Profile</a><br>
-<a href="mycourses">My Courses</a><br>
+<%@include file="link.jsp"%>
+
 <h4>Courses</h4>
 <%
 	ResultSet course = (ResultSet)request.getAttribute("courses");

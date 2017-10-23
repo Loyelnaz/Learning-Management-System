@@ -8,13 +8,11 @@
 </head>
 <body>
 
-<%@include file="link.jsp"%>
+	<a href="course_approval">Approve Courses</a>
+	<a href="instructor_approval">Approve Instructor</a>
+	<a href="add_instructor.jsp">Add Instructor</a>
+	<a href="course_available">Available Courses</a>
+	<a href="login.jsp">Logout</a>
 
-<h4>Upload Profile Picture</h4>
-
-<form action="upload_picture" method="post" enctype="multipart/form-data">
-	<input type="file" name="photo"><br>
-	<input type="submit" value="Upload Picture">
-</form>
 </body>
 </html>

@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<%@include file="link.jsp"%>
+
 <h4>Add instructor</h4>
 
 <form action="add_instructor" method="post">

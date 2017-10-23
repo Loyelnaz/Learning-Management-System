@@ -10,9 +10,7 @@
 Hi Instructor!<br>
 
 <a href="mycourses">My Courses</a>
+<a href="add_course.jsp">Add Course</a>
 
-<form action="add_course.jsp" method="post">
-	<input type="submit" value="Add Course"><br>
-</form>
 </body>
 </html>

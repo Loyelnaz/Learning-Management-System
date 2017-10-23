@@ -8,13 +8,10 @@
 </head>
 <body>
 
-<%@include file="link.jsp"%>
+<a href="homepage">Home</a><br>
+<a href="profile.jsp">Profile</a><br>
+<a href="mycourses">My Courses</a><br>
+<a href="login.jsp">Logout</a><br>
 
-<h4>Upload Profile Picture</h4>
-
-<form action="upload_picture" method="post" enctype="multipart/form-data">
-	<input type="file" name="photo"><br>
-	<input type="submit" value="Upload Picture">
-</form>
 </body>
 </html>

@@ -8,21 +8,7 @@
 </head>
 <body>
 
-<a href="course_approval">Approve Courses</a>
-<a href="instructor_approval">Approve Instructor</a>
-<a href="add_instructor.jsp">Add Instructor</a>
-<a href="course_available">Available Courses</a>
-<a href="login.jsp">Logout</a>
+	<%@include file="link.jsp"%>
 
-<!-- <form action="add_instructor" method="post">
-	<label>First Name: </label><input type="text" name="first_name"><br>
-	<label>Middle Name: </label><input type="text" name="middle_name"><br>
-	<label>Last Name: </label><input type="text" name="last_name"><br>
-	<label>Email ID: </label><input type="text" name="emailid"><br>
-	<label>Phone No: </label><input type="text" name="phoneno"><br>
-	<label>User Name: </label><input type="text" name="username"><br>
-	<label>Password: </label><input type="password" name="password"><br>
-	<input type="submit" value="Add Instructor">
-</form> -->
 </body>
 </html>

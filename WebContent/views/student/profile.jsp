@@ -14,6 +14,8 @@
 </head>
 <body>
 
+<%@include file="link.jsp"%>
+
 <%
 	HttpSession httpsession = request.getSession(true);
 	
@@ -39,7 +41,6 @@ ps = conn.prepareStatement("select * from user_photo where uid=?");
         os.flush();
         os.close();
     } -->
-<a href="logout">Logout</a>
 <center style="margin-top: 50px"><h4>Student Profile</h4></center>
 
 <center>

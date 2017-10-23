@@ -9,7 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Hi Instructor Approval page!
+	
+	<%@include file="link.jsp"%>
+		
+	<h4>Instructor Approval</h4>
 	
 	<table style="border: 1px solid black">
 	<tr>

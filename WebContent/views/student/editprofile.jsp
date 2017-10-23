@@ -10,6 +10,10 @@
 </head>
 <body>
 
+<%@include file="link.jsp"%>
+
+<h4>Student Edit Profile</h4>
+
 <%
 	HttpSession httpsession = request.getSession(true);
 	int user_id = (Integer) httpsession.getAttribute("user_id");

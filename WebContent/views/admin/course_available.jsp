@@ -9,33 +9,25 @@
 </head>
 <body>
 
-<h4>Available Courses</h4>
-
-<%
-	ResultSet active_course = (ResultSet)request.getAttribute("active");
-	String not_active = (String)request.getAttribute("not_active");
+	<%@include file="link.jsp"%>
 	
-	if(not_active.equals("")) {
-		while(active_course.next()) {
-			out.print("Name: " + active_course.getString(2) + "<br>");
-			out.print("Description: " + active_course.getString(3) + "<br>");
-		}		
-	}
-	else {
-		out.print(not_active);
-	}
-
-%>
-<!--
-	ResultSet active_course = (ResultSet)request.getAttribute("active");
+	<h4>Available Courses</h4>
 	
-	out.print(active_course);
--->
-<!-- if(active_course.next()) {
-		while(active_course.next()) {
-			out.print("Name: " + active_course.getString(2) + "<br>");
-			out.print("Description: " + active_course.getString(3) + "<br>");
-		}	
-	} -->
+	<%
+		ResultSet active_course = (ResultSet)request.getAttribute("active");
+		String not_active = (String)request.getAttribute("not_active");
+		
+		if(not_active.equals("")) {
+			while(active_course.next()) {
+				out.print("Name: " + active_course.getString(2) + "<br>");
+				out.print("Description: " + active_course.getString(3) + "<br>");
+			}		
+		}
+		else {
+			out.print(not_active);
+		}
+	
+	%>
+
 </body>
 </html>

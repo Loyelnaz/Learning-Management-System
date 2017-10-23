@@ -9,17 +9,19 @@
 </head>
 <body>
 
-<h4>Course Approval</h4>
-
-<%
-	ResultSet inactive_course = (ResultSet)request.getAttribute("inactive");
-
-	while(inactive_course.next()) {
-		out.print("Name: " + inactive_course.getString(2) + "<br>");
-		out.print("Description: " + inactive_course.getString(3) + "<br>");
-		out.print("<a href='approve_course?course_id="+inactive_course.getInt(1)+"'>Approve</a><br>");
-	}
-%>
+	<%@include file="link.jsp"%>
+	
+	<h4>Course Approval</h4>
+	
+	<%
+		ResultSet inactive_course = (ResultSet)request.getAttribute("inactive");
+	
+		while(inactive_course.next()) {
+			out.print("Name: " + inactive_course.getString(2) + "<br>");
+			out.print("Description: " + inactive_course.getString(3) + "<br>");
+			out.print("<a href='approve_course?course_id="+inactive_course.getInt(1)+"'>Approve</a><br>");
+		}
+	%>
 
 </body>
 </html>
