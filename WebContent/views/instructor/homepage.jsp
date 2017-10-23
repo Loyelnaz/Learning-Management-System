@@ -9,9 +9,10 @@
 <body>
 Hi Instructor!<br>
 
+<a href="mycourses">My Courses</a>
+
 <form action="add_course.jsp" method="post">
 	<input type="submit" value="Add Course"><br>
 </form>
-<a href="add_module.jsp">Add Module</a>
 </body>
 </html>

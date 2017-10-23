@@ -206,4 +206,14 @@
     <servlet-name>CourseEnrollController</servlet-name>
     <url-pattern>/views/student/enrollnow</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InstructorCoursesController</display-name>
+    <servlet-name>InstructorCoursesController</servlet-name>
+    <servlet-class>controller.instructor.InstructorCoursesController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InstructorCoursesController</servlet-name>
+    <url-pattern>/views/instructor/mycourses</url-pattern>
+  </servlet-mapping>
 </web-app>
