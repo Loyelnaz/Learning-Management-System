@@ -44,9 +44,9 @@ ps = conn.prepareStatement("select * from user_photo where uid=?");
 <center style="margin-top: 50px"><h4>Student Profile</h4></center>
 
 <center>
-	<a href="upload_picture.jsp"><button class="btn btn-primary">Upload Picture</button></a>
 	
 	<form action="editprofile.jsp" method="post">
+		<a href="upload_picture.jsp"><button class="btn btn-primary">Upload Picture</button></a>
 		<input type="submit" value="Edit Profile" class="btn btn-primary">
 	</form>
 </center>

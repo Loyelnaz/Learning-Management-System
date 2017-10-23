@@ -10,7 +10,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-Courses
+
+<%@include file="link.jsp"%>
+
+<h4>Courses</h4>
 
 <%
 	Connection conn = null;

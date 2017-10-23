@@ -3,7 +3,6 @@
 label{
     display: inline-block;
     float: none;
-    clear: left;
     width: 150px;
     text-align: right;
 }
