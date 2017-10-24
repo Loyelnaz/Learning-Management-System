@@ -13,14 +13,27 @@
 
 <center style="margin-top: 100px;margin-left:60px;margin-bottom:30px"><h4>Student Registration</h4></center>
 
+<%
+	String first_name = (String)request.getAttribute("first_name");
+	String last_name = (String)request.getAttribute("last_name");
+	String emailid = (String)request.getAttribute("emailid");
+	String phoneno = (String)request.getAttribute("phoneno");
+	String username = (String)request.getAttribute("username");
+%>
+
 <form action="register" method="post">
 	<center>
-		<label>First Name: </label><input type="text" name="first_name"><br>
+		<label>First Name: </label><input type="text" name="first_name">
+		<% if(first_name != null) out.print("<font color='red' style='position: static;'>" + first_name + "</font>"); %><br>
 		<label>Middle Name: </label><input type="text" name="middle_name"><br>
-		<label>Last Name: </label><input type="text" name="last_name"><br>
-		<label>Email ID: </label><input type="text" name="emailid"><br>
-		<label>Phone No: </label><input type="text" name="phoneno"><br>
-		<label>User Name: </label><input type="text" name="username"><br>
+		<label>Last Name: </label><input type="text" name="last_name">
+		<% if(last_name != null) out.print("<font color='red'>" + last_name + "</font>"); %><br>
+		<label>Email ID: </label><input type="text" name="emailid">
+		<% if(emailid != null) out.print("<font color='red'>" + emailid + "</font>"); %><br>
+		<label>Phone No: </label><input type="text" name="phoneno">
+		<% if(phoneno != null) out.print("<font color='red'>" + phoneno + "</font>"); %><br>
+		<label>User Name: </label><input type="text" name="username">
+		<% if(username != null) out.print("<font color='red'>" + username + "</font>"); %><br>
 		<label>Password: </label><input type="password" name="password"><br>
 		<input type="submit" value="Register" class="btn btn-primary">
 	</center>

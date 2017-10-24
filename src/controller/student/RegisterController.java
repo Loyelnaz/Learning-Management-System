@@ -19,7 +19,6 @@ public class RegisterController extends HttpServlet {
      */
     public RegisterController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -46,9 +45,37 @@ public class RegisterController extends HttpServlet {
 		String emailid = request.getParameter("emailid");
 		String phoneno = request.getParameter("phoneno");
 		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		
+		boolean status = false;
+		
+		if(first_name.equals("")) {
+			request.setAttribute("first_name", "First Name cannot be null");
+			status = true;
+		}
+		else if(last_name.equals("")) {
+			request.setAttribute("last_name", "Last Name cannot be null");
+			status = true;
+		}
+		else if(emailid.equals("")) {
+			request.setAttribute("emailid", "Email ID cannot be null");
+			status = true;
+		}
+		else if(phoneno.equals("")) {
+			request.setAttribute("phoneno", "Phone No cannot be null");
+			status = true;
+		}
+		else if(username.equals("")) {
+			request.setAttribute("username", "User Name cannot be null");
+			status = true;
+		}
+		
+		if(status) {
+			request.getRequestDispatcher("register.jsp").forward(request, response);
+		}
 		
 		try {
-			String password = Crypto.encrypt(request.getParameter("password"));
+			password = Crypto.encrypt(password);
 			ps = conn.prepareStatement("insert into user_table "
 									   + "(first_name, middle_name, last_name, emailid, phoneno, username, password, ugid, is_active)"
 									   + "values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -66,7 +93,8 @@ public class RegisterController extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
-		response.sendRedirect("login.jsp");
+		//response.sendRedirect("login.jsp");
+		request.getRequestDispatcher("login.jsp").forward(request, response);
 	}
 
 }
