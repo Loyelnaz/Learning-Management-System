@@ -19,8 +19,8 @@
 <center style="margin-top:40px">
 <h4>Add Module</h4>
 <form action="add_module" method="post">
-	Module Name: <input type="text" name="module_name" style="margin-left:35px;margin-bottom:10px">
-	Module Description: <textarea rows="4" cols="20" name="description" style="margin-bottom:10px"></textarea>
+	Module Name: <input type="text" name="module_name" style="margin-left:35px;margin-bottom:10px"><br>
+	Module Description: <textarea rows="4" cols="20" name="description" style="margin-bottom:10px"></textarea><br>
 	<input type="hidden" name="course_id" value=<%=course_id %>>
 	<input type="submit" value="Add Module" class="btn btn-primary" style="margin-top:30px">
 </form>

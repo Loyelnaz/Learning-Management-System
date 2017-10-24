@@ -44,6 +44,10 @@ public class InstructorCoursesController extends HttpServlet {
 			
 			if(instructor_courses.isBeforeFirst()) {
 				request.setAttribute("instructor_courses", instructor_courses);
+				request.setAttribute("status", "");
+			}
+			else {
+				request.setAttribute("status", "No courses to show.");
 			}
 			
 			request.getRequestDispatcher("mycourses.jsp").forward(request, response);

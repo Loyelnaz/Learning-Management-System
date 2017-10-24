@@ -16,11 +16,18 @@
 
 <%
 	ResultSet instructor_courses = (ResultSet)request.getAttribute("instructor_courses");
-
-	while(instructor_courses.next()) {
-		out.print("<h5>" + instructor_courses.getString(2) + "</h5>");
-		out.print("<i>" + instructor_courses.getString(3) + "</i><br><br>");
+	String status = (String)request.getAttribute("status");
+	
+	if(status.equals("")) {
+		while(instructor_courses.next()) {
+			out.print("<h5>" + instructor_courses.getString(2) + "</h5>");
+			out.print("<i>" + instructor_courses.getString(3) + "</i><br><br>");
+		}		
 	}
+	else {
+		out.print(status);
+	}
+
 %>
 <!-- out.print("<a href='coursepage?course_id="+course.getInt(1)+"'>Go to course</a><br>"); -->
 </body>
