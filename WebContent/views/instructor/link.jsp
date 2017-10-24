@@ -10,6 +10,7 @@
 
 <center style="margin-top:40px">
 	<a href="homepage.jsp" style="margin-right:35px">Home</a>
+	<a href="profile.jsp" style="margin-right:35px">Profile</a>
 	<a href="mycourses" style="margin-right:35px">My Courses</a>
 	<a href="add_course.jsp" style="margin-right:35px">Add Course</a>
 	<a href="login.jsp" style="margin-right:35px">Logout</a>

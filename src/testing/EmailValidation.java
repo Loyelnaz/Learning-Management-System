@@ -26,30 +26,6 @@ public class EmailValidation {
 		assertEquals(true, result);
 	}
 	
-//	@Test
-//	public void test4() {
-//		boolean result = ev.validateEmail("journaldev.100@journaldev.com.au");
-//		assertEquals(true, result);
-//	}
-	
-//	@Test
-//	public void test5() {
-//		boolean result = ev.validateEmail("journaldev@1.com");
-//		assertEquals(true, result);
-//	}
-//	
-//	@Test
-//	public void test6() {
-//		boolean result = ev.validateEmail("journaldev@gmail.com.com");
-//		assertEquals(true, result);
-//	}
-	
-//	@Test
-//	public void test7() {
-//		boolean result = ev.validateEmail("journaldev_100@yahoo-test.ABC.CoM");
-//		assertEquals(true, result);
-//	}
-	
 	@Test
 	public void test8() {
 		boolean result = ev.validateEmail("journaldev-100@yahoo.com");
@@ -97,12 +73,6 @@ public class EmailValidation {
 		boolean result = ev.validateEmail("journaldev@%*.com");
 		assertEquals(false, result);
 	}
-	
-//	@Test
-//	public void test16() {
-//		boolean result = ev.validateEmail("journaldev..2002@gmail.com");
-//		assertEquals(false, result);
-//	}
 	
 	@Test
 	public void test17() {

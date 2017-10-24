@@ -41,7 +41,7 @@ public class CourseListController extends HttpServlet {
 		conn = new DBConnector().getConnection();
 		
 		try {
-			ps = conn.prepareStatement("select * from course_table");
+			ps = conn.prepareStatement("select * from course_table where is_active=true");
 			rs = ps.executeQuery();
 			request.setAttribute("courses", rs);
 			request.getRequestDispatcher("homepage.jsp").forward(request, response);

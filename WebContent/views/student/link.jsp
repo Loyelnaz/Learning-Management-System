@@ -14,10 +14,12 @@
 </head>
 <body>
 
-<a href="homepage">Home</a>
-<a href="profile.jsp">Profile</a>
-<a href="mycourses">My Courses</a>
-<a href="login.jsp">Logout</a>
+<center style="margin-top:30px">
+	<a href="homepage" style="margin-left:20px">Home</a>
+	<a href="profile.jsp" style="margin-left:20px">Profile</a>
+	<a href="mycourses" style="margin-left:20px">My Courses</a>
+	<a href="login.jsp" style="margin-left:20px">Logout</a>
+</center>
 
 </body>
 </html>
