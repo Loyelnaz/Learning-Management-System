@@ -38,8 +38,8 @@ public class QuizResultController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Connection conn = null;
-		PreparedStatement ps = null;
-		ResultSet quiz = null;
+		PreparedStatement ps = null, ps1 = null;
+		ResultSet quiz = null, quiz_result = null;
 		
 		conn = new DBConnector().getConnection();
 		HttpSession httpsession = request.getSession(true);
@@ -93,6 +93,11 @@ public class QuizResultController extends HttpServlet {
 			if(i > 0) {
 				System.out.println("Quiz Score added");
 			}
+			
+			ps1 = conn.prepareStatement("SELECT qs.score, count(qq.question_no) from quiz_score qs inner join quiz_questions qq on qs.course_id=qq.course_id and qs.module_no=qq.module_no group by qs.score");
+			quiz_result = ps1.executeQuery();
+			
+			request.setAttribute("quiz_result", quiz_result);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
