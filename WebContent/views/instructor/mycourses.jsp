@@ -23,6 +23,7 @@
 			out.print("<h5>" + instructor_courses.getString(2) + "</h5>");
 			out.print("<i>" + instructor_courses.getString(3) + "</i><br>");
 			out.print("<a href='editcourse?course_id="+instructor_courses.getString(1)+"'>Edit Course</a>");
+			out.print("<a href='studentreport?course_id="+instructor_courses.getString(1)+"'>Student Report</a>");
 		}		
 	}
 	else {

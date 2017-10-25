@@ -286,4 +286,14 @@
     <servlet-name>QuizResultController</servlet-name>
     <url-pattern>/views/student/quizresult</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentReportController</display-name>
+    <servlet-name>StudentReportController</servlet-name>
+    <servlet-class>controller.instructor.StudentReportController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentReportController</servlet-name>
+    <url-pattern>/views/instructor/studentreport</url-pattern>
+  </servlet-mapping>
 </web-app>
