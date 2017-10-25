@@ -62,10 +62,10 @@
 
 <center>
 	<a href="upload_picture.jsp"><button class="btn btn-primary">Upload Picture</button></a>
-	<form action="editprofile.jsp" method="post">
+	
+	<form action="editprofile.jsp" method="post" style="margin-top: 10px">
 		<input type="submit" value="Edit Profile" class="btn btn-primary">
 	</form>
-</center>
 
 	<%
 		ps = conn.prepareStatement("select * from user_table where uid=?");
@@ -83,6 +83,7 @@
 			out.print("</center>");
 		}		
 	%>
+</center>
 
 </body>
 </html>

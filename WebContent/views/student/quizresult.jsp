@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="margin-left: 50px">
 
 	<%@include file="link.jsp"%>
 	
