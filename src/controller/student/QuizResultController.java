@@ -11,15 +11,15 @@ import java.sql.*;
 import database.*;
 
 /**
- * Servlet implementation class QuizController
+ * Servlet implementation class QuizResultController
  */
-public class QuizController extends HttpServlet {
+public class QuizResultController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public QuizController() {
+    public QuizResultController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,24 +41,33 @@ public class QuizController extends HttpServlet {
 		
 		Connection conn = null;
 		PreparedStatement ps = null;
-		ResultSet quizes = null;
+		ResultSet quiz = null;
 		
 		conn = new DBConnector().getConnection();
+		HttpSession httpsession = request.getSession(true);
+		int user_id = (Integer) httpsession.getAttribute("user_id");
 		int module_no = Integer.parseInt(request.getParameter("module_no"));
 		int course_id = Integer.parseInt(request.getParameter("course_id"));
+		
+//		String option11 = request.getParameter("option11");
+//		String option2 = request.getParameter("option2");
+//		System.out.println(option11);
 		
 		try {
 			ps = conn.prepareStatement("select * from quiz_questions where course_id=? and module_no=?");
 			ps.setInt(1, course_id);
 			ps.setInt(2, module_no);
-			quizes = ps.executeQuery();
+			quiz = ps.executeQuery();
 			
-			if(quizes.isBeforeFirst()) {
-				request.setAttribute("quizes", quizes);
-				request.setAttribute("module_no", module_no);
-				request.setAttribute("course_id", course_id);
+			while(quiz.next()) {
+				String option1 = request.getParameter("option1"+quiz.getInt(9));
+				String option2 = request.getParameter("option2"+quiz.getInt(9));
+				String option3 = request.getParameter("option3"+quiz.getInt(9));
+				String option4 = request.getParameter("option4"+quiz.getInt(9));
+				System.out.println(option1);
+				System.out.println(option2);
+				System.out.println(option3);
 			}
-			request.getRequestDispatcher("quiz.jsp").forward(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
