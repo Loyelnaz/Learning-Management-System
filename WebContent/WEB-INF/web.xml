@@ -266,4 +266,14 @@
     <servlet-name>EditCourseController</servlet-name>
     <url-pattern>/views/instructor/editcourse</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>QuizController</display-name>
+    <servlet-name>QuizController</servlet-name>
+    <servlet-class>controller.student.QuizController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QuizController</servlet-name>
+    <url-pattern>/views/student/quiz</url-pattern>
+  </servlet-mapping>
 </web-app>

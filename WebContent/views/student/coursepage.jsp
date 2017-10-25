@@ -33,6 +33,7 @@
 		while(rs.next()) {
 			out.print("Module " + i + ": " + rs.getString(2) + "<br>");
 			out.print("<i>" + rs.getString(3) + "</i><br>");
+			out.print("<form action='quiz' method='post'><input class='btn btn-primary' type='submit' value='Take Quiz'><input type='hidden' value='"+rs.getInt(1)+"' name='module_no'><input type='hidden' value='"+course_id+"' name='course_id'></form>");
 			i = i + 1;
 		}
 	}

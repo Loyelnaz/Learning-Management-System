@@ -13,7 +13,8 @@
 
 <%
 	int course_id = (int) request.getAttribute("course_id");
-	System.out.println("JSP Course ID: " + course_id);
+	int module_no = (int) request.getAttribute("module_no");
+	out.print("Module No: " + module_no);
 %>
 
 <center style="margin-top:40px">
