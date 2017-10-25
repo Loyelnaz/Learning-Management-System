@@ -27,8 +27,7 @@ public class MyCoursesController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
+
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet course_enroll = null, rs = null;
@@ -36,7 +35,6 @@ public class MyCoursesController extends HttpServlet {
 		
 		HttpSession httpsession = request.getSession(true);
 		int user_id = (Integer) httpsession.getAttribute("user_id");
-//		System.out.println("USER ID: " + user_id);
 		conn = new DBConnector().getConnection();
 		
 		try {

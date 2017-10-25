@@ -1,3 +1,4 @@
+<%@page import="com.sun.prism.Image"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@page language="java" import="java.sql.*" %>
@@ -18,7 +19,8 @@
 
 <%
 	HttpSession httpsession = request.getSession(true);
-	
+	int user_id = (Integer) httpsession.getAttribute("user_id");
+
 	Connection conn = null;
 	PreparedStatement ps = null;
 	ResultSet rs = null;
@@ -27,57 +29,60 @@
 	conn = new DBConnector().getConnection();
  
 %>
-<!-- 
-ps = conn.prepareStatement("select * from user_photo where uid=?");
-    ps.setInt(1, user_id);
-    rs = ps.executeQuery();
- 
-    if(rs.next()){
-    	Blob image = rs.getBlob(2);
-    	byte[] imgData = image.getBytes(1,(int)image.length());
- 
-        response.setContentType("image/jpg");
-        os = response.getOutputStream();
-        out.print(os.write(imgData));
-        os.flush();
-        os.close();
-    } -->
+	<!-- 
+	try {
+		ps = conn.prepareStatement("select photo from user_photo where uid=?");
+	    ps.setInt(1, user_id);
+	    rs = ps.executeQuery();
+	 
+	    if(rs.next()) {
+	    	byte[] imgData = new byte[1048576];
+	 		int size = 0;
+	 		InputStream image = rs.getBinaryStream("photo");
+	 		response.reset();
+	        response.setContentType("image/jpg");
+	        
+	        while((size=image.read(imgData)) != -1) {
+	        	response.getOutputStream().write(imgData, 0, size);
+	        }
+	    }
+	}
+	catch(Exception e) {
+		e.printStackTrace();
+	}
+	finally {
+		response.getOutputStream().flush();
+		response.getOutputStream().close();
+		rs.close();
+		ps.close();
+		conn.close();
+	}
+	-->
 <center style="margin-top: 50px"><h4>Student Profile</h4></center>
 
 <center>
-	
+	<a href="upload_picture.jsp"><button class="btn btn-primary">Upload Picture</button></a>
 	<form action="editprofile.jsp" method="post">
-		<a href="upload_picture.jsp"><button class="btn btn-primary">Upload Picture</button></a>
 		<input type="submit" value="Edit Profile" class="btn btn-primary">
 	</form>
 </center>
 
-<%
-	if(httpsession != null) {
-		if(httpsession.getAttribute("user_id") != null) {
-			int user_id = (Integer) httpsession.getAttribute("user_id");
-	
-			ps = conn.prepareStatement("select * from user_table where uid=?");
-			ps.setInt(1, user_id);
-			rs = ps.executeQuery();
-			
-			if(rs.next()) {
-				out.print("<center style='margin-top:30px'>");
-				out.print("<label>First Name: "+rs.getString(2)+"</label><br>");
-				out.print("<label>Middle Name: "+rs.getString(3)+"</label><br>");
-				out.print("<label>Last Name: "+rs.getString(4)+"</label><br>");
-				out.print("<label>Email ID: "+rs.getString(5)+"</label><br>");
-				out.print("<label>Phone No: "+rs.getString(6)+"</label><br>");
-				out.print("<label>User Name: "+rs.getString(7)+"</label><br>");
-				out.print("</center>");
-			}	
-		}
-		else {
-			response.sendRedirect("login.jsp");
-		}
-	}
-	
-%>
+	<%
+		ps = conn.prepareStatement("select * from user_table where uid=?");
+		ps.setInt(1, user_id);
+		rs = ps.executeQuery();
+		
+		if(rs.next()) {
+			out.print("<center style='margin-top:30px'>");
+			out.print("<label>First Name: "+rs.getString(2)+"</label><br>");
+			out.print("<label>Middle Name: "+rs.getString(3)+"</label><br>");
+			out.print("<label>Last Name: "+rs.getString(4)+"</label><br>");
+			out.print("<label>Email ID: "+rs.getString(5)+"</label><br>");
+			out.print("<label>Phone No: "+rs.getString(6)+"</label><br>");
+			out.print("<label>User Name: "+rs.getString(7)+"</label><br>");
+			out.print("</center>");
+		}		
+	%>
 
 </body>
 </html>

@@ -11,12 +11,12 @@
 
 <%@include file="link.jsp"%>
 
-<center>
+<center style="margin-top: 80px">
 	<h4>Upload Profile Picture</h4>
 
 	<form action="upload_picture" method="post" enctype="multipart/form-data">
 		<input type="file" name="photo"><br>
-		<input type="submit" value="Upload Picture" class="">
+		<input type="submit" value="Upload Picture" class="btn btn-primary">
 	</form>
 </center>
 
