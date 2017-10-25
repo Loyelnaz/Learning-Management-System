@@ -4,12 +4,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<!--<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
-<style type="text/css">
-    <%@include file="/css/bootstrap.css" %>
-    <%@include file="/css/custom.css" %>
-</style>-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
 <title>Insert title here</title>
 </head>
 <body>

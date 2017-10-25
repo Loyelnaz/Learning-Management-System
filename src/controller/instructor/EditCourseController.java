@@ -39,7 +39,7 @@ public class EditCourseController extends HttpServlet {
 		conn = new DBConnector().getConnection();
 		
 		try {
-			ps = conn.prepareStatement("select * from course_table where uid=? and course_id?");
+			ps = conn.prepareStatement("select * from course_table where uid=? and course_id=?");
 			ps.setInt(1, user_id);
 			ps.setInt(2, course_id);
 			edit_courses = ps.executeQuery();
@@ -62,7 +62,9 @@ public class EditCourseController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("POST");
-		doGet(request, response);
+		
+		request.getRequestDispatcher("homepage.jsp").forward(request, response);
+//		doGet(request, response);
 	}
 
 }
