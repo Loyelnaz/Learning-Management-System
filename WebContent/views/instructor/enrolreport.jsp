@@ -28,7 +28,7 @@
 				if(message == "") {
 					while(enrolled.next()) {
 						out.print("<tr>");
-						out.print("<td align='center' style='border: 1px solid black'><a href='quizscore?username="+enrolled.getString(4)+"'>"+enrolled.getString(4)+"</a></td>");
+						out.print("<td align='center' style='border: 1px solid black'><a href='quizscore?username="+enrolled.getString(4)+"&course_id="+enrolled.getInt(5)+"'>"+enrolled.getString(4)+"</a></td>");
 						out.print("<td align='center' style='border: 1px solid black'>" + enrolled.getString(1) + " " + enrolled.getString(2) + "</td>");
 						out.print("<td align='center' style='border: 1px solid black'>" + enrolled.getString(3) + "</td>");
 						out.print("</tr>");

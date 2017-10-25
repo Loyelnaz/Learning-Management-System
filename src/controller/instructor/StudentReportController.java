@@ -40,7 +40,7 @@ public class StudentReportController extends HttpServlet {
 		int course_id = Integer.parseInt(request.getParameter("course_id"));
 		
 		try {
-			ps = conn.prepareStatement("SELECT first_name, last_name, emailid, username from course_enrolment ce inner join user_table ut on ce.uid=ut.uid and ce.course_id=? and ugid=?;");
+			ps = conn.prepareStatement("SELECT first_name, last_name, emailid, username, course_id from course_enrolment ce inner join user_table ut on ce.uid=ut.uid and ce.course_id=? and ugid=?;");
 			ps.setInt(1, course_id);
 			ps.setInt(2, 2);
 			enrolled = ps.executeQuery();
