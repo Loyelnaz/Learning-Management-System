@@ -61,7 +61,7 @@ public class QuizScoreReportController extends HttpServlet {
 				request.setAttribute("message", "");
 			}
 			else {
-				request.setAttribute("message", "The user has not attempt any quiz.");
+				request.setAttribute("message", "The user has not attempted any quiz.");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

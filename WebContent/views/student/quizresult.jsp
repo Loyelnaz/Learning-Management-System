@@ -20,8 +20,8 @@
 		<h4>Quiz Result</h4>
 		
 		You Scored: <%=quiz_result.getInt(1) %><br>
-		Maximum Score: <%=quiz_result.getInt(2) %>
-		Percentage: <%=(float)quiz_result.getInt(1) / quiz_result.getInt(2) * 100 %>%
+		Maximum Score: <%=quiz_result.getInt(2) %><br>
+		Percentage: <% out.print(String.format("%.2f", (float)quiz_result.getInt(1) / quiz_result.getInt(2) * 100)); %>%
 	</center>
 	<%} %>
 </body>

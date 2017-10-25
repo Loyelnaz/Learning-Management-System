@@ -5,10 +5,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" type="text/css">
 <title>Insert title here</title>
 </head>
 <body>
 	
+	<%@include file="link.jsp"%>
+	
+	<center style="margin-top:30px">
+	
+	<h4>Student Module wise Report</h4>
 	<%
 		ResultSet quiz_report = (ResultSet)request.getAttribute("quiz_report");
 		String message = (String)request.getAttribute("message");
@@ -20,9 +26,10 @@
 			}
 		}
 		else {
-			
+			out.print(message);
 		}
 	%>
+	</center>
 	
 </body>
 </html>
