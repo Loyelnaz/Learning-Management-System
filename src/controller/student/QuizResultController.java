@@ -36,8 +36,6 @@ public class QuizResultController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//		doGet(request, response);
 		
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -48,10 +46,6 @@ public class QuizResultController extends HttpServlet {
 		int user_id = (Integer) httpsession.getAttribute("user_id");
 		int module_no = Integer.parseInt(request.getParameter("module_no"));
 		int course_id = Integer.parseInt(request.getParameter("course_id"));
-		
-//		String option11 = request.getParameter("option11");
-//		String option2 = request.getParameter("option2");
-//		System.out.println(option11);
 		
 		try {
 			int quiz_score = 0;
@@ -88,10 +82,21 @@ public class QuizResultController extends HttpServlet {
 				}
 			}
 			System.out.println("Quiz Score: " + quiz_score);
+			request.setAttribute("quiz_score", quiz_score);
+			ps = conn.prepareStatement("insert into quiz_score values (?,?,?,?)");
+			ps.setInt(1, course_id);
+			ps.setInt(2, module_no);
+			ps.setInt(3, user_id);
+			ps.setInt(4, quiz_score);
+			int i = ps.executeUpdate();
+			
+			if(i > 0) {
+				System.out.println("Quiz Score added");
+			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		request.getRequestDispatcher("quizresult.jsp").forward(request, response);
 	}
 
 }

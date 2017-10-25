@@ -31,8 +31,8 @@ public class CourseContentController extends HttpServlet {
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		Connection conn = null;
-		PreparedStatement ps = null;
-		ResultSet enrolled = null;
+		PreparedStatement ps = null, ps1 = null;
+		ResultSet enrolled = null, quiz_result = null;
 		
 		conn = new DBConnector().getConnection();
 		HttpSession httpsession = request.getSession(true);
@@ -45,8 +45,12 @@ public class CourseContentController extends HttpServlet {
 			ps.setInt(1, course_id);
 			enrolled = ps.executeQuery();
 			
+			ps1 = conn.prepareStatement("SELECT qs.score, count(qq.question_no) from quiz_score qs inner join quiz_questions qq on qs.course_id=qq.course_id and qs.module_no=qq.module_no group by qs.score");
+			quiz_result = ps1.executeQuery();
+			
 			if(enrolled.next()) {
 				request.setAttribute("isEnrolled", true);
+				request.setAttribute("quiz_result", quiz_result);
 				request.getRequestDispatcher("coursepage.jsp?course_id="+course_id+"").forward(request, response);
 			}
 			else {

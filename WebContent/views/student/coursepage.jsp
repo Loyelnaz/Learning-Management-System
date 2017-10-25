@@ -20,6 +20,7 @@
 	PreparedStatement ps = null;
 	int i = 1;
 	Boolean isEnrolled = (Boolean)request.getAttribute("isEnrolled");
+	ResultSet quiz_result = (ResultSet)request.getAttribute("quiz_result");
 	conn = new DBConnector().getConnection();
 	
 	int course_id = Integer.parseInt(request.getParameter("course_id"));
@@ -31,9 +32,14 @@
 		out.print("(Enrolled)");
 		out.print("<br>");
 		while(rs.next()) {
-			out.print("Module " + i + ": " + rs.getString(2) + "<br>");
+			out.print("<b>Module " + i + ": </b>" + rs.getString(2) + "<br>");
 			out.print("<i>" + rs.getString(3) + "</i><br>");
-			out.print("<form action='quiz' method='post'><input class='btn btn-primary' type='submit' value='Take Quiz'><input type='hidden' value='"+rs.getInt(1)+"' name='module_no'><input type='hidden' value='"+course_id+"' name='course_id'></form>");
+			if(quiz_result.next()) {
+				out.print("<font color='green' size='3px'>Score " + quiz_result.getInt(1) + "/" + quiz_result.getInt(2) + "</font><br>");
+			}
+			else {
+				out.print("<form action='quiz' method='post'><input class='btn btn-primary' type='submit' value='Take Quiz'><input type='hidden' value='"+rs.getInt(1)+"' name='module_no'><input type='hidden' value='"+course_id+"' name='course_id'></form>");						
+			}
 			i = i + 1;
 		}
 	}
