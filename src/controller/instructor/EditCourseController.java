@@ -6,19 +6,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import java.sql.*;
 import database.*;
 
 /**
- * Servlet implementation class InstructorCoursesController
+ * Servlet implementation class EditCourseController
  */
-public class InstructorCoursesController extends HttpServlet {
+public class EditCourseController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InstructorCoursesController() {
+    public EditCourseController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,34 +28,32 @@ public class InstructorCoursesController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		Connection conn = null;
 		PreparedStatement ps = null;
-		ResultSet instructor_courses = null;
+		ResultSet edit_courses = null;
 		
 		HttpSession httpsession = request.getSession(true);
 		int user_id = (Integer) httpsession.getAttribute("user_id");
+		int course_id = Integer.parseInt(request.getParameter("course_id"));
 		conn = new DBConnector().getConnection();
 		
 		try {
-			ps = conn.prepareStatement("select * from course_table where uid=?");
+			ps = conn.prepareStatement("select * from course_table where uid=? and course_id?");
 			ps.setInt(1, user_id);
-			instructor_courses = ps.executeQuery();
+			ps.setInt(2, course_id);
+			edit_courses = ps.executeQuery();
 			
-			if(instructor_courses.isBeforeFirst()) {
-				request.setAttribute("instructor_courses", instructor_courses);
-				request.setAttribute("status", "");
-			}
-			else {
-				request.setAttribute("status", "No courses to show.");
+			if(edit_courses.isBeforeFirst()) {
+				request.setAttribute("edit_courses", edit_courses);
 			}
 			
-			request.getRequestDispatcher("mycourses.jsp").forward(request, response);
+			request.getRequestDispatcher("editcourse.jsp").forward(request, response);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	/**
@@ -62,6 +61,7 @@ public class InstructorCoursesController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("POST");
 		doGet(request, response);
 	}
 

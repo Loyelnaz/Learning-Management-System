@@ -21,7 +21,8 @@
 	if(status.equals("")) {
 		while(instructor_courses.next()) {
 			out.print("<h5>" + instructor_courses.getString(2) + "</h5>");
-			out.print("<i>" + instructor_courses.getString(3) + "</i><br><br>");
+			out.print("<i>" + instructor_courses.getString(3) + "</i><br>");
+			out.print("<a href='editcourse?course_id="+instructor_courses.getString(1)+"'>Edit Course</a>");
 		}		
 	}
 	else {

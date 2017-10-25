@@ -3,12 +3,16 @@
 label{
     display: inline-block;
     float: none;
-    width: 150px;
+    width: 130px;
     text-align: right;
+}
+form font{
+	margin-left:45px;
 }
 input[type="text"], input[type="password"] {
   	display: inline-block;
  	float: none;
+ 	width: 200px;
 }
 input[type="submit"] {
   	display: inline-block;

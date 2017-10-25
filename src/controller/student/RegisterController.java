@@ -53,20 +53,24 @@ public class RegisterController extends HttpServlet {
 			request.setAttribute("first_name", "First Name cannot be null");
 			status = true;
 		}
-		else if(last_name.equals("")) {
+		if(last_name.equals("")) {
 			request.setAttribute("last_name", "Last Name cannot be null");
 			status = true;
 		}
-		else if(emailid.equals("")) {
+		if(emailid.equals("")) {
 			request.setAttribute("emailid", "Email ID cannot be null");
 			status = true;
 		}
-		else if(phoneno.equals("")) {
+		if(phoneno.equals("")) {
 			request.setAttribute("phoneno", "Phone No cannot be null");
 			status = true;
 		}
-		else if(username.equals("")) {
+		if(username.equals("")) {
 			request.setAttribute("username", "User Name cannot be null");
+			status = true;
+		}
+		if(password.equals("")) {
+			request.setAttribute("password", "Password cannot be null");
 			status = true;
 		}
 		

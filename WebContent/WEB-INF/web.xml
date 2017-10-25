@@ -256,4 +256,14 @@
     <servlet-name>EmailValidator</servlet-name>
     <url-pattern>/EmailValidator</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditCourseController</display-name>
+    <servlet-name>EditCourseController</servlet-name>
+    <servlet-class>controller.instructor.EditCourseController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditCourseController</servlet-name>
+    <url-pattern>/views/instructor/editcourse</url-pattern>
+  </servlet-mapping>
 </web-app>

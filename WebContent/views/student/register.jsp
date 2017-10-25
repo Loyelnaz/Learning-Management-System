@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<center style="margin-top: 100px;margin-left:60px;margin-bottom:30px"><h4>Student Registration</h4></center>
+<center style="margin-top: 60px;margin-left:60px;margin-bottom:30px"><h4>Student Registration</h4></center>
 
 <%
 	String first_name = (String)request.getAttribute("first_name");
@@ -20,25 +20,24 @@
 	String phoneno = (String)request.getAttribute("phoneno");
 	String username = (String)request.getAttribute("username");
 %>
-
+<center>
 <form action="register" method="post">
-	<center>
 		<label>First Name: </label><input type="text" name="first_name">
-		<% if(first_name != null) out.print("<font color='red' style='position: static;'>" + first_name + "</font>"); %><br>
+		<% if(first_name != null) out.print("<br><font size='1px' color='red'>" + first_name + "</font>"); %><br>
 		<label>Middle Name: </label><input type="text" name="middle_name"><br>
 		<label>Last Name: </label><input type="text" name="last_name">
-		<% if(last_name != null) out.print("<font color='red'>" + last_name + "</font>"); %><br>
+		<% if(last_name != null) out.print("<br><font size='1px' color='red'>" + last_name + "</font>"); %><br>
 		<label>Email ID: </label><input type="text" name="emailid">
-		<% if(emailid != null) out.print("<font color='red'>" + emailid + "</font>"); %><br>
+		<% if(emailid != null) out.print("<br><font size='1px' color='red'>" + emailid + "</font>"); %><br>
 		<label>Phone No: </label><input type="text" name="phoneno">
-		<% if(phoneno != null) out.print("<font color='red'>" + phoneno + "</font>"); %><br>
+		<% if(phoneno != null) out.print("<br><font size='1px' color='red'>" + phoneno + "</font>"); %><br>
 		<label>User Name: </label><input type="text" name="username">
-		<% if(username != null) out.print("<font color='red'>" + username + "</font>"); %><br>
+		<% if(username != null) out.print("<br><font size='1px' color='red'>" + username + "</font>"); %><br>
 		<label>Password: </label><input type="password" name="password"><br>
 		<input type="submit" value="Register" class="btn btn-primary">
-	</center>
-</form>
 
+</form>
+</center>
 <center style="margin-left:70px;margin-top:30px">
 Have an account?<a href="login.jsp"> Login</a>
 </center>
