@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import java.sql.*;
 import database.*;
 
@@ -60,10 +59,32 @@ public class EditCourseController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		System.out.println("POST");
+
+		HttpSession httpsession = request.getSession(true);
+		int user_id = (Integer) httpsession.getAttribute("user_id");
 		
-		request.getRequestDispatcher("homepage.jsp").forward(request, response);
+		String course_name = request.getParameter("course_name");
+		String course_description = request.getParameter("course_description");
+		int course_id = Integer.parseInt(request.getParameter("course_id"));
+		
+		Connection conn = null;
+		PreparedStatement ps = null;
+		
+		conn = new DBConnector().getConnection();
+		
+		try {
+			ps = conn.prepareStatement("update course_table set course_name=?, course_description=? where uid=? and course_id=?");
+			ps.setString(1, course_name);
+			ps.setString(2, course_description);
+			ps.setInt(3, user_id);
+			ps.setInt(4, course_id);
+			
+			int i = ps.executeUpdate();
+			System.out.println(i + " row of course table updated.");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		request.getRequestDispatcher("mycourses").forward(request, response);
 //		doGet(request, response);
 	}
 

@@ -53,6 +53,7 @@ public class EditProfileController extends HttpServlet {
 		ResultSet rs = null;
 		
 		conn = new DBConnector().getConnection();
+		
 		try {
 			ps = conn.prepareStatement("update user_table set first_name=?, middle_name=?, last_name=?, emailid=?, phoneno=?, username=? where uid=?");
 			ps.setString(1, first_name);

@@ -22,6 +22,7 @@
 		<form action="editcourse" method="post" style="margin-top:30px;">
 			<label>Course Name:</label><input type="text" value="<%=edit_course.getString("course_name")%>" name="course_name"><br>
 			<label>Course Description:</label><textarea cols="40" rows="3" name="course_description"><%=edit_course.getString("course_description")%></textarea><br>
+			<input type="hidden" name="course_id" value=<%=edit_course.getInt(1) %>>
 			<input type="submit" value="Save Course" class="btn btn-primary" style="margin-top:15px">
 		</form>
 	</center>
